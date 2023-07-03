@@ -109,8 +109,7 @@ main#main_content {margin-left: 200px;}
 #about_me .desc #resumeDownload a:hover {background: #ff6ab2; color: #eee;}
 #about_me .desc #resumeDownload span.tooltip {position: absolute; bottom: -100%; left: 50%; transform: translateX(-50%) scale(0); background: #eee; font-weight: bold; letter-spacing: 3px; color: #20C997; padding: 10px; border-radius: 5px; transform-origin: bottom; transition: all 0.5s;}
 #about_me .desc #resumeDownload span.tooltip.active {bottom: 150%; transform: scale(1) translateX(-50%);}
-#about_me .image {border: 5px solid; border-color: #5cdb95 #05386b; border-radius: 44% 56% 63% 37% / 37% 33% 67% 63%; align-self: center; overflow: hidden; margin-left: auto;}
-#about_me .image img {width: 100%; transform: scale(1.1); filter: grayscale(100%);}
+
 /* skills */
 #about_me .skills-bar {align-self: center; margin-right: auto; margin-top: 30px;}
 #about_me .skills-bar .secTitle {text-align: left;}
@@ -220,9 +219,7 @@ footer .wrapper .right ul li a img {width: 30px; background: #fff; padding: 1px;
     #banner .main_content .text span {padding: 5px;}
     #banner .main_content .name {font-size: 35px;}
     #banner .main_content .autoText {font-size: 13px;}
-	#about_me .desc p {text-align: justify;}
-    #about_me .details ul li {font-size: 12px;}
-    #about_me .details ul li .left img {width: 15px; margin-right: 5px;}
+    #about_me .profile {padding: 0; margin-bottom: 30px;}
     #review .review_wrapper .review_box {width: 100%; left: 0;}
     footer .wrapper .left, footer .wrapper .right ul {justify-content: center;}
     #contact .info {margin: 20px 0;}
