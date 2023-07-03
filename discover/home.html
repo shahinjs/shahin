@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Some Awesome Front End Designs | Shahin Alam</title>
+    <link rel="shortcut icon" href="/image/favicon.svg" type="image/x-icon">
+    <link rel="stylesheet" href="/css/responsive.css">
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+        <!-- theme change  -->
+<button class="themeChangeBtn" title="Change Theme" onclick='document.querySelector("body").classList.toggle("dark");'>    <img src="/image/icons/day_night.png" alt="Theme Image" id="themeImg">    </button>
+
+    <!-- whatsapp chat -->
+<div id="whatsappChat">
+    <button title="Chat with me" onclick="document.querySelector('#whatsappChat .chatBox').classList.toggle('active')">
+        <img src="/image/icons/chat.png" alt="Chat">
+        <img src="/image/icons/whatsapp.png" alt="Whatsapp">
+    </button>
+    <div class="chatBox">
+        <img src="/image/whatsappQR.png" alt="Whatsapp QR Code" id="qrCode"> <br>
+        <h4>Scan QR Code    <br>    or</h4>
+        <div style="display: flex; margin-top: 10px;"><a href="https://web.whatsapp.com/send?phone=8801961900733&text=Are you available to chat?" target="_blank" class="flowingBtn">Chat on Whatsapp <span></span>  <span></span>   <span></span> <span></span></a></div>
+    </div>
+</div>
+
+    <!-- back to top button -->
+<img src="/image/icons/rocket.png" alt="Rocket" onclick='window.scrollTo({top: 0});' id="topBtn" title="Go to top">
+
+                <!-- header section start from here -->
+<header>
+    <div class="container">
+        <a href="/index.html" class="header_logo" title="Shahin Alam | Front End Developer"><img src="/image/logo-white.svg" alt="Logo" width="100%"></a>
+        <div id="menuItems">
+            <ul>
+                <li><a href="/index.html" class="navLinks">
+                    <span></span> <span></span> <span></span> <span></span> <b>HOME</b>
+                </a></li>
+                <li><a href="/index.html#about_me" class="navLinks">
+                    <span></span> <span></span> <span></span> <span></span> <b>ABOUT ME</b>
+                </a></li>
+                <li><a href="/index.html#services" class="navLinks">
+                    <span></span> <span></span> <span></span> <span></span> <b>SERVICES</b>
+                </a></li>
+                <li><a href="/portfolio.html" class="navLinks">
+                    <span></span> <span></span> <span></span> <span></span> <b>PORTFOLIO</b>
+                </a></li>
+                <li><a href="home.html" class="navLinks">
+                    <span></span> <span></span> <span></span> <span></span> <b>DISCOVER</b>
+                </a></li>
+                <li><a href="/index.html#contact" class="navLinks">
+                    <span></span> <span></span> <span></span> <span></span> <b>CONTACT</b>
+                </a></li>
+            </ul>
+        </div><!-- menu items -->
+        <ul id="hamburger_icon">
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul><!-- hamburger menu icon-->
+        <!-- mobile menu -->
+        <nav id="mobile_menu_wrapper">
+            <div class="content">
+                <ul>
+                    <li><a href="/index.html">HOME</a></li>
+                    <li><a href="/index.html#about_me">ABOUT ME</a></li>
+                    <li><a href="/index.html#services">SERVICES</a></li>
+                    <li><a href="/portfolio.html">PORTFOLIO</a></li>
+                    <li><a href="home.html">DISCOVER</a></li>
+                    <li><a href="/index.html#contact">CONTACT</a></li>
+                </ul>
+                <div class="tel_mail">
+                    <a href="tel:+8801961900733" title="Feel free to call me"><img src="/image/icons/phone.png" alt="Phone"></a>
+                    <a href="mailto:freelancershahin00@gmail.com" title="Write something on email"><img src="/image/icons/envelope.png" alt="Mail"></a>
+                </div>
+            </div>
+                <script>
+                    // hamburger
+                    let hamburger = document.querySelector('ul#hamburger_icon');
+                    let menus = document.querySelector('header nav#mobile_menu_wrapper');
+
+                    hamburger.addEventListener('click', ()=>{
+                        hamburger.classList.toggle('active');
+                        menus.classList.toggle('active');
+                    });
+                </script>
+        </nav>
+        <!-- contact -->
+        <div class="contact">
+            <a href="tel:+8801961900733" title="Feel free to call me"><img src="/image/icons/phone.png" alt="Phone"></a>
+            <a href="mailto:freelancershahin00@gmail.com" title="Write something on email"><img src="/image/icons/envelope.png" alt="Mail"></a>
+        </div>
+    </div><!-- container -->
+</header><!-- header section -->
+
+                <!-- banner section start from here -->
+<div id="banner">
+    <div class="container">
+        <h1>Some Awesome Front End Designs</h1>
+        <h4>Get Codes From Here</h4>
+    </div><!-- container -->
+</div><!-- banner section -->
+
+                <!-- main contents start from here -->
+<section id="main_content">
+    <div class="container">
+        <h2 class="title">Use my codes to change the look of your own site and give them a functionality</h2>
+        <!-- search bar -->
+        <div class="searchBar">
+            <img src="/image/icons/search.png" alt="search" width="30px">
+            <input type="text" name="searchDiscover" id="searchDiscover" placeholder="Search by tags" onkeyup="searchDiscover()">
+        </div>
+
+            <!-- discover items -->
+        <div id="discover_wrapper">
+            <div class="row">
+                    <!-- shadow button -->
+                <div class="col_6 discover_box_wrapper">
+                    <div class="discover_box">
+                        <div class="demo ">
+                            <div id="shadowBtn">
+                                <button class="btn_shadow">Click</button>
+                            </div>
+                        </div>
+                        <div class="text">
+                            <span class="tags"><span>Tags :</span> Button, Animation, Hoverable Button, Animated Button</span>
+                            <div class="name">Shadow Button</div>
+                            <div class="d_flex flex_end"><a href="buttons/shadow-button.html" class="flowingBtn">SOURCE CODE <span></span> <span></span> <span></span> <span></span></a></div>
+                        </div>
+                    </div>
+                </div>
+                    <!-- border slice button -->
+                <div class="col_6 discover_box_wrapper">
+                    <div class="discover_box">
+                        <div class="demo ">
+                            <div id="border_slice_button">
+                                <button class="btn_border_slice">Click
+                                    <span></span>    <span></span>    <span></span>    <span></span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="text">
+                            <span class="tags"><span>Tags :</span> Button, Animation, Hoverable Button, Animated Button</span>
+                            <div class="name">Border Slice Button</div>
+                            <div class="d_flex flex_end"><a href="buttons/slice-border-button.html" class="flowingBtn">SOURCE CODE <span></span> <span></span> <span></span> <span></span></a></div>
+                        </div>
+                    </div>
+                </div>
+                    <!-- login form -->
+                <div class="col_6 discover_box_wrapper">
+                    <div class="discover_box">
+                        <div class="demo ">
+                            <div id="simpleLoginForm">
+                                <form action="">
+                                    <input type="text" placeholder="Username">
+                                    <input type="password" placeholder="Password">
+                                    <input type="submit" value="LOGIN">
+                                </form>
+                            </div>
+                        </div>
+                        <div class="text">
+                            <span class="tags"><span>Tags :</span> Login Form</span>
+                            <div class="name">Simple Login Form</div>
+                            <div class="d_flex flex_end"><a href="login forms/simple-login-form.html" class="flowingBtn">SOURCE CODE <span></span> <span></span> <span></span> <span></span></a></div>
+                        </div>
+                    </div>
+                </div>
+                    <!-- online connectivity check -->
+                <div class="col_6 discover_box_wrapper">
+                    <div class="discover_box">
+                        <div class="demo ">
+                            <div id="checkConnectivity">
+                                <div class="text">You are <span id="result"></span></div>
+                            </div>
+                                <script type="text/javascript">
+                                {
+                                    let result = document.querySelector("#result");
+                                    
+                                    window.addEventListener("online", showResult);
+                                    window.addEventListener("offline", showResult);
+                                    
+                                    function showResult(){
+                                        if(navigator.onLine){
+                                            result.innerHTML = "Online";
+                                            result.style.color = "lightgreen";
+                                        }	else {
+                                                result.innerHTML = "Offline";
+                                                result.style.color = "red";
+                                            }
+                                    }
+                                    showResult();
+                                }
+                                </script>
+                        </div>
+                        <div class="text">
+                            <span class="tags"><span>Tags :</span> JavaScript Tricks</span>
+                            <div class="name">Online Connectivity Check</div>
+                            <div class="d_flex flex_end"><a href="others/check-connectivity.html" class="flowingBtn">SOURCE CODE <span></span> <span></span> <span></span> <span></span></a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- container-->
+</section><!-- main content -->
+
+                <!-- footer section start from here -->
+<footer>
+    <div class="container">
+        <div class="logo"><img src="/image/logo-white.svg" alt="Logo" width="100%"></div>
+        <div class="row wrapper">
+            <div class="col_6 right">
+                <ul>
+                    <li><a href="https://facebook.com/shahin.alam.j" target="_blank" title="Facebook"><img src="/image/icons/facebook.png" alt="Facebook"></a></li>
+                    <li><a href="https://join.skype.com/invite/wEGRwcjDVLXy" target="_blank" title="Skype"><img src="/image/icons/skype.png" alt="Skype"></a></li>
+                    <li><a href="https://twitter.com/shahin_js_" target="_blank" title="Twitter"><img src="/image/icons/twitter.png" alt="Twitter"></a></li>
+                    <li><a href="https://linkedin.com/in/freelancer-shahin" target="_blank" title="Linkedin"><img src="/image/icons/linkedin.png" alt="Linkedin"></a></li>
+                    <li><a href="https://www.youtube.com/channel/UCKJ0A_C4a_yq2RWz3kH9KCw" target="_blank" title="YouTube"><img src="/image/icons/youtube.png" alt="YouTube"></a></li>
+                </ul>
+            </div>
+            <div class="col_6 left"><img src="/image/icons/copyright.png" alt="copyright" width="20px"> 2023 | <span style="color: aqua;">Shahin Alam</span></div>
+        </div>
+    </div><!-- container -->
+</footer><!-- footer section -->
+
+</body>
+</html>
+
+<!-- on scroll events -->
+<script>
+    window.onscroll = function() {wScroll()};
+    function wScroll() {
+        // scroll theme image
+        let theta = document.documentElement.scrollTop / 70 % Math.PI;
+        document.getElementById('themeImg').style.transform ='rotate(' + theta + 'rad)';
+
+        // sticky header
+        if (document.documentElement.scrollTop > 80) {
+            document.querySelector("header").className = "sticky";
+            document.querySelector(".header_logo img").src = "/image/logo.svg";
+            document.querySelector("#whatsappChat button").className = "active";
+        } else {
+            document.querySelector("header").className = "";
+            document.querySelector(".header_logo img").src = "/image/logo-white.svg";
+            document.querySelector("#whatsappChat button").className = "";
+        }
+
+        // go to top
+        if (document.documentElement.scrollTop > 2000) {
+            document.querySelector("#topBtn").classList.add("active");
+        } else {
+            document.querySelector("#topBtn").classList.remove("active");
+        }
+    };
+</script>
+
+<!-- search filter -->
+<script>
+    function searchDiscover() {
+        // Declare variables
+        let input, filter, wrapper, keyword, span, i, txtValue;
+        input = document.getElementById('searchDiscover');
+        filter = input.value.toUpperCase();
+        wrapper = document.getElementById("discover_wrapper");
+        keyword = document.getElementsByClassName('discover_box_wrapper');
+
+        // Loop through all list items, and hide those who don't match the search query
+        for (i = 0; i < keyword.length; i++) {
+            span = keyword[i].getElementsByClassName("tags")[0];
+            txtValue = span.textContent || span.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                keyword[i].style.display = "";
+            } else {
+                keyword[i].style.display = "none";
+            }
+        }
+    };
+</script>

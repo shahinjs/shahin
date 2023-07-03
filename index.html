@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Shahin Alam | Front End - Wordpress Developer</title>
+    <link rel="shortcut icon" href="image/fav.svg" type="image/x-icon">
+    <link rel="stylesheet" href="css/scrollFunction.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+        <!-- preloader -->
+<div id="preloader">
+    
+</div>
+    <!-- whatsapp chat -->
+<div id="whatsappChat">
+    <a href="https://wa.me/send?phone=8801961900733&amp;text=Are you available to chat?" target="_blank">
+        <img src="image/icons/chat.png" alt="Chat">
+    </a>
+</div>
+
+    <!-- back to top button -->
+<img src="image/icons/rocket.png" alt="Rocket" onclick='window.scrollTo({top: 0});' id="topBtn" title="Go to top">
+
+                <!-- header section start from here -->
+<header>
+    <a href="index.html" class="header_logo" title="Shahin Alam | Front End - Wordpress Developer"><img src="image/logo-white.svg" alt="Logo" width="100%"></a>
+    <div id="menuItems">
+        <ul>
+            <li><a href="index.html" class="navLinks"><img src="image/menus/home.png" alt="home"> <span>HOME</span></a></li>
+            <li><a href="#about_me" class="navLinks"><img src="image/menus/about.png" alt="about us"> <span>ABOUT ME</span></a></li>
+            <li><a href="#services" class="navLinks"><img src="image/menus/services.png" alt="services"> <span>SERVICES</span></a></li>
+            <li><a href="#portfolios" class="navLinks"><img src="image/menus/portfolio.png" alt="portfolio"> <span>PORTFOLIOS</span></a></li>
+            <li><a href="#contact" class="navLinks"><img src="image/menus/contact.png" alt="contact"> <span>CONTACT</span></a></li>
+        </ul>
+    </div><!-- menu items -->
+</header><!-- header section -->
+
+                <!-- mobile header section start from here -->
+<div id="mobileHeader">
+    <a href="index.html" class="mobile_logo"><img src="image/logo-white.svg" alt="logo" width="100%"></a>
+    <!-- hamburger icon -->
+    <div class="hamburger" onclick='hamburger()'>
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </div><!-- hamburger menu icon-->
+    <script>// hamburger script
+        function hamburger() {
+            const hamburger = document.querySelector(".hamburger");
+            const navMenu = document.querySelector("nav#mobileNav");
+
+            hamburger.classList.toggle("active");
+            navMenu.classList.toggle("active");
+        }
+    </script>
+</div><!-- mobile header section -->
+
+                <!-- mobile nav section start from here -->
+<nav id="mobileNav">
+    <ul>
+        <li><a href="index.html" class="navLinks"><img src="image/menus/home.png" alt="home"> <span>HOME</span></a></li>
+        <li><a href="#about_me" class="navLinks"><img src="image/menus/about.png" alt="about us"> <span>ABOUT</span></a></li>
+        <li><a href="#services" class="navLinks"><img src="image/menus/services.png" alt="services"> <span>SERVICES</span></a></li>
+        <li><a href="#portfolios" class="navLinks"><img src="image/menus/portfolio.png" alt="portfolio"> <span>PORTFOLIOS</span></a></li>
+        <li><a href="#contact" class="navLinks"><img src="image/menus/contact.png" alt="contact"> <span>CONTACT</span></a></li>
+    </ul>
+</nav><!-- mobile nav section -->
+
+    <!-- main contents start from here -->
+<main id="main_content">
+                <!-- banner section start from here -->
+<div id="banner">
+    <div class="container main_content">
+        <h1 class="text">MORE THAN</h1>
+        <h1 class="autoText"><span class="txt-rotate" data-period="2000" data-rotate='[ "CREATIVITY", "CODING", "DEVELOPMENT " ]'></span>.</h1>
+        <script>
+            // auto typing
+            let TxtRotate = function(el, toRotate, period) {
+            this.toRotate = toRotate;
+            this.el = el;
+            this.loopNum = 0;
+            this.period = parseInt(period, 0) || 2000;
+            this.txt = '';
+            this.tick();
+            this.isDeleting = false;
+            };
+
+            TxtRotate.prototype.tick = function() {
+            let i = this.loopNum % this.toRotate.length;
+            let fullTxt = this.toRotate[i];
+
+            if (this.isDeleting) {
+                this.txt = fullTxt.substring(0, this.txt.length - 1);
+            } else {
+                this.txt = fullTxt.substring(0, this.txt.length + 1);
+            }
+
+            this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+
+            let that = this;
+            let delta = 100 - Math.random() * 100;
+
+            if (!this.isDeleting && this.txt === fullTxt) {
+                delta = this.period;
+                this.isDeleting = true;
+            } else if (this.isDeleting && this.txt === '') {
+                this.isDeleting = false;
+                this.loopNum++;
+                delta = 1000;
+            }
+
+            setTimeout(function() {
+                that.tick();
+            }, delta);
+            };
+
+            window.onload = function() {
+            let elements = document.getElementsByClassName('txt-rotate');
+            for (let i=0; i<elements.length; i++) {
+                let toRotate = elements[i].getAttribute('data-rotate');
+                let period = elements[i].getAttribute('data-period');
+                if (toRotate) {
+                new TxtRotate(elements[i], JSON.parse(toRotate), period);
+                }
+            }
+            // add css
+                let css = document.createElement("style");
+                document.body.appendChild(css);
+            };
+        </script>
+        <div><a href="#" class="hireBtn">HIRE ME</a></div>
+        <div class="social">
+            <ul>
+                <li><a href="https://facebook.com/j.shahinalam" target="_blank" title="Facebook"><img src="image/icons/facebook.png" alt="Facebook"></a></li>
+                <li><a href="https://join.skype.com/invite/wEGRwcjDVLXy" target="_blank" title="Skype"><img src="image/icons/skype.png" alt="Skype"></a></li>
+                <li><a href="https://twitter.com/shahin_js_" target="_blank" title="Twitter"><img src="image/icons/twitter.png" alt="Twitter"></a></li>
+                <li><a href="https://linkedin.com/in/js-shahinalam" target="_blank" title="Linkedin"><img src="image/icons/linkedin.png" alt="Linkedin"></a></li>
+                <li><a href="https://www.youtube.com/@jsdevware?sub_confirmation=1" target="_blank" title="YouTube"><img src="image/icons/youtube.png" alt="YouTube"></a></li>
+            </ul>
+        </div>
+    </div><!-- container -->
+</div><!-- banner section -->
+
+                <!-- about section start from here -->
+<section id="about_me">
+    <div class="container">
+        <div class="secTitle">
+            <h2>ABOUT</h2>
+            <h1>ABOUT ME</h1>
+            <p>there are few words about me</p>
+        </div>
+        <div class="row">
+            <div class="col_6 col_md_12 desc">
+                <p>I'm an expert <b>Front End Developer</b> with 1 year of experience creating usable, responsive and SEO friendly websites for eCommerce, educational, small business, online news media agencies, portfolios, blogging, and many more. I have completed some professional projects. I create responsive and interactive websites using HTML-5, CSS-3, Bootstrap, JavaScript and jQuery. Also I'm developing creative digital experiences for WordPress with a strong focus on delivering exceptional UX.</p>
+                <p>I use to work on <b><a href="https://fiverr.com" target="_blank" title="Freelance Services Marketplace">fiverr.com</a></b>. On the other side, I'm working as a <b>Front End Developer</b> on <b><a href="https://atztechnology.com" target="_blank" title="Trusted IT Service Company">AtZ Technology</a></b> since May, 2022. And very soon I am going to setup my developer team which name is <b><a href="https://facebook.com/jsdevware" target="_blank" title="Managed IT Service Team">JS Devware</a></b>.</p>
+                <p>If you work with me then you will feel you are in the right place. I will try to provide you with the best quality service.</p>
+            </div>
+            <div class="col_5 col_md_12 details">
+                <ul>
+                    <li>
+                        <div class="left"><img src="image/icons/arrow_right.png" alt="arrow"> <b>Birthday :</b></div>
+                        <div class="right">10 February, 2003</div>
+                    </li>
+                    <li>
+                        <div class="left"><img src="image/icons/arrow_right.png" alt="arrow"> <b>City :</b></div>
+                        <div class="right">Gazipur, Dhaka, Bangladesh</div>
+                    </li>
+                    <li>
+                        <div class="left"><img src="image/icons/arrow_right.png" alt="arrow"> <b>Education :</b></div> 
+                        <div class="right">Higher Secondary Certificate</div>
+                    </li>
+                    <li>
+                        <div class="left"><img src="image/icons/arrow_right.png" alt="arrow"> <b>Language :</b></div> 
+                        <div class="right">English, Bengali, Hindi</div>
+                    </li>
+                    <li>
+                        <div class="left"><img src="image/icons/arrow_right.png" alt="arrow"> <b>Phone :</b></div>
+                        <div class="right"><a href="tel:+8801961900733" title="Feel free to call me">+88 01961 900733</a></div>
+                    </li>
+                    <li>
+                        <div class="left"><img src="image/icons/arrow_right.png" alt="arrow"> <b>Email :</b></div>
+                        <div class="right"><a href="mailto:freelancershahin00@gmail.com" title="Write something on email">freelancershahin00@gmail.com</a></div>
+                    </li>
+                    <li>
+                        <div class="left"><img src="image/icons/arrow_right.png" alt="arrow"> <b>Freelance :</b></div>
+                        <div class="right">Available</div>
+                    </li>
+                </ul>
+                <!-- resume download button -->
+                <div id="resumeDownload">
+                    <a href="files/Shahin's Resume.pdf" download="Shahin's Resume" title="Click to download my Resume" onclick="resumeDownload()">DOWNLOAD RESUME</a>
+                    <span class="tooltip">Downloaded</span>
+                        <script>
+                            function resumeDownload(){
+                                let tooltip = document.querySelector("#about_me .details #resumeDownload span.tooltip");
+                                tooltip.classList.add("active");
+                                setTimeout(function() {tooltip.classList.remove("active")}, 2000);
+                            }
+                        </script>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col_5 image js-scroll scrolled slide-in-left">
+                <img src="image/profile.jpg" alt="Profile">
+            </div>
+            <div class="col_6 skills-bar js-scroll scrolled animateSkill">
+                <div class="secTitle">
+                    <h2>SKILLS</h2>
+                    <h1>MY SKILLS</h1>
+                    <p>with more than 1 year of experience</p>
+                </div>
+                <div class="bar">
+                    <b class="info">HTML 5</b>
+                    <div class="progress-line"><span class="html"></span></div>
+                </div>
+                <div class="bar">
+                    <b class="info">CSS 3</b>
+                    <div class="progress-line"><span class="css"></span></div>
+                </div>
+                <div class="bar">
+                    <b class="info">BOOTSTRAP</b>
+                    <div class="progress-line"><span class="bootstrap"></span></div>
+                </div>
+                <div class="bar">
+                    <b class="info">JAVASCRIPT</b>
+                    <div class="progress-line"><span class="javascript"></span></div>
+                </div>
+                <div class="bar">
+                    <b class="info">WORDPRESS</b>
+                    <div class="progress-line"><span class="wordpress"></span></div>
+                </div>
+            </div>
+        </div>
+    </div><!-- container -->
+</section><!-- about section -->
+
+                <!-- counter section start from here -->
+<section id="counter">
+    <div class="container">
+        <div class="row">
+            <div class="col_3 col_md_6 item js-scroll scrolled fade-in-top">
+                <img src="image/counter/hours.png" alt="Hours">
+                <h2>2100</h2>
+                <h4>Hours Worked</h4>
+            </div>
+            <div class="col_3 col_md_6 item js-scroll scrolled fade-in-top">
+                <img src="image/counter/project.png" alt="projects">
+                <h2>20</h2>
+                <h4>Projects Completed</h4>
+            </div>
+            <div class="col_3 col_md_6 item js-scroll scrolled fade-in-top">
+                <img src="image/counter/client.png" alt="Clients">
+                <h2>16</h2>
+                <h4>Happy Clients</h4>
+            </div>
+            <div class="col_3 col_md_6 item js-scroll scrolled fade-in-top">
+                <img src="image/counter/cup.png" alt="Cup">
+                <h2>76</h2>
+                <h4>Cups of Coffee</h4>
+            </div>
+        </div>
+    </div><!-- container -->
+</section><!-- counter section -->
+
+                <!-- service section start from here -->
+<section id="services">
+    <div class="container">
+        <div class="secTitle">
+            <h2>SERVICES</h2>
+            <h1>MY SERVICES</h1>
+            <p>as a developer I always try to provide the best services. some of my services are listed below</p>
+        </div>
+        <div class="row">
+            <div class="col_3 col_md_6 p_1 js-scroll scrolled serviceAnimate">
+                <div class="service_wrapper">
+                    <img src="image/services/web_design.png" alt="Web Design">
+                    <h2>Web Design</h2>
+                    <p>Qualified web design with attractive effects which make your website dynamic perfectly</p>
+                </div>
+            </div>
+            <div class="col_3 col_md_6 p_1 js-scroll scrolled serviceAnimate">
+                <div class="service_wrapper">
+                    <img src="image/services/responsive_design.png" alt="Responsive Design">
+                    <h2>Responsive Design</h2>
+                    <p>Responsive design which will be working almost all browsers and devices</p>
+                </div>
+            </div>
+            <div class="col_3 col_md_6 p_1 js-scroll scrolled serviceAnimate">
+                <div class="service_wrapper">
+                    <img src="image/services/psd_htm.png" alt="PSD to HTML">
+                    <h2>PSD to HTML</h2>
+                    <p>Convert a PhotoShop design to a responsive, dynamic website.</p>
+                </div>
+            </div>
+            <div class="col_3 col_md_6 p_1 js-scroll scrolled serviceAnimate">
+                <div class="service_wrapper">
+                    <img src="image/services/wordpress.png" alt="Wordpress">
+                    <h2>Wordpress</h2>
+                    <p>Customize any dynamic, interactive and responsive Wordpress theme</p>
+                </div>
+            </div>
+        </div>
+        <div class="portfolioBtn"><a href="portfolio.html" class="flowingBtn">   View My Works    <span></span>    <span></span>    <span></span>    <span></span>    </a></div>
+    </div><!-- container -->
+</section><!-- services section -->
+
+                <!-- hire section start from here -->
+<section id="hire">
+    <div class="container">
+        <h1>I am available for Freelance</h1>
+        <a href="https://web.whatsapp.com/send?phone=8801961900733&text=Are you available to chat?" target="_blank">HIRE ME</a>
+    </div><!-- container -->
+</section><!-- hire section -->
+
+                <!-- review section start from here -->
+<section id="review">
+    <div class="container">
+        <div class="secTitle">
+            <h2>TESTIMONIALS</h2>
+            <h1>WHAT CLIENTS SAY</h1>
+            <p>there are some testimonials from my happy clients I have got</p>
+        </div>
+        <div class="review_wrapper">
+            <div class="review_box review1 active">
+                <div class="quote"><img src="image/icons/quote.png" alt="Quote"></div>
+                <p>Great Developer, quick response to my requirements, I will continue work with him in the future.</p>
+                <hr>
+                <h2>Al Momen</h2>
+                <h4>Founder & CEO, <a href="https://atztechnology.com" target="_blank" title="Trusted IT Service Company">AtZ Technology</a></h4>
+            </div>
+            <div class="review_box review2">
+                <div class="quote"><img src="image/icons/quote.png" alt="Quote"></div>
+                <p>He proves he is genius programmer. I will keep assigning all job to him now on.</p>
+                <hr>
+                <h2>Ovi Ahmed</h2>
+                <h4>Currency Exchanger, India</h4>
+            </div>
+            <div class="review_box review3">
+                <div class="quote"><img src="image/icons/quote.png" alt="Quote"></div>
+                <p>He is tottaly awesome developer. I'm very glad to work with him.</p>
+                <hr>
+                <h2>Roknus Jaman Rinku</h2>
+                <h4>Professional Graphic Designer</h4>
+            </div>
+        </div>
+    </div><!-- container -->
+            <script>
+                const review1 = document.querySelector(".review_wrapper .review1");
+                const review2 = document.querySelector(".review_wrapper .review2");
+                const review3 = document.querySelector(".review_wrapper .review3");
+
+                setInterval (function(){
+                    if (review1.classList.contains("active")) {
+                        review2.classList.add("active");
+                        review1.classList.remove("active");
+                    } else if(review2.classList.contains("active")) {
+                        review3.classList.add("active");
+                        review2.classList.remove("active");
+                    } else if(review3.classList.contains("active")) {
+                        review1.classList.add("active");
+                        review3.classList.remove("active");
+                    }
+                }, 4000);
+            </script>
+</section><!-- review section -->
+
+                <!-- discover section start from here -->
+<section id="discover">
+    <div class="container">
+        <h1>Browse my selection of free frontend codes</h1>
+        <p>Get awesome designs you may need</p>
+        <a href="discover/home.html">BROWSE NOW</a>
+    </div><!-- container -->
+</section><!-- discover section -->
+
+                <!-- contact section start from here -->
+<section id="contact">
+    <div class="container">
+        <div class="secTitle">
+            <p>GOT A QUESTION? FEEL FREE TO</p>
+            <h2>CONTACT</h2>
+            <h1>CONTACT ME</h1>
+            <p>I'm here to help and answer any question you might have. I look forward to hearing from you</p>
+        </div>
+        <div class="row">
+            <!-- contact form wrapper -->
+            <div class="col_6 p_1 scrollElements js-scroll fade-in-left">
+                <form action="" id="contact_form">
+                    <div class="input">
+                        <img src="image/icons/user.png" alt="Avatar"><input type="text" id="client_name" placeholder="Full Name" required>
+                    </div>
+                    <div class="input">
+                        <img src="image/icons/envelope.png" alt="Email"><input type="email" id="client_mail" placeholder="Email Address" required>
+                    </div>
+                    <div class="input">
+                        <img src="image/icons/subject.png" alt="Subject"><input type="text" id="client_sub" placeholder="Subject (Optional)">
+                    </div>
+                    <textarea name="contact_msg" id="client_msg" rows="5" placeholder="Message" required></textarea>
+                    <button type="submit" class="flowingBtn">  SEND <span></span>   <span></span>   <span></span>   <span></span>
+                    </button>
+                </form>
+            </div>
+            <!-- location map wrapper -->
+            <div class="col_6 map scrollElements js-scroll fade-in-right">
+                <div class="mapouter"><div class="gmap_canvas"><iframe width="100%" height="300" id="gmap_canvas" src="https://maps.google.com/maps?q=X9QJ+RP3%20%E0%A6%9A%E0%A6%A8%E0%A7%8D%E0%A6%A6%E0%A6%A8%E0%A6%BE%20%E0%A6%9A%E0%A7%8B%E0%A6%B0%E0%A6%BE%E0%A6%B8%E0%A7%8D%E0%A6%A4%E0%A6%BE,%20Chandona,%20gazipur,%20bangladesh&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://123movies-to.org">123movies</a><br><style>.mapouter{position:relative;text-align:right;height:300px;width:100%;}</style><a href="https://www.embedgooglemap.net">google maps web pages</a><style>.gmap_canvas {overflow:hidden;background:none!important;height:300px;width:100%;}</style></div></div>
+            </div>
+        </div>
+        <div class="d_flex">
+            <div class="col_4 info scrollElements js-scroll fade-in-top">
+                <img src="image/icons/location.png" alt="Location">
+                <h4>Gazipur, Dhaka, Bangladesh</h4>
+            </div>
+            <div class="col_4 info scrollElements js-scroll fade-in-top">
+                <img src="image/icons/phone.png" alt="Phone">
+                <h4><a href="tel:+8801961900733"  title="Feel free to call me">+88 01961 900733</a></h4>
+            </div>
+            <div class="col_4 info scrollElements js-scroll fade-in-top">
+                <img src="image/icons/envelope.png" alt="Email">
+                <h4><a href="mailto:freelancershahin00@gmail.com" title="Write something on email">freelancershahin00@gmail.com</a></h4>
+            </div>
+        </div>
+    </div><!-- container -->
+</section><!-- contact section -->
+
+                <!-- footer section start from here -->
+<footer>
+    <div class="container">
+        <div class="logo"><img src="image/logo-white.svg" alt="Logo" width="100%"></div>
+        <div class="row wrapper">
+            <div class="col_6 right">
+                <ul>
+                    <li><a href="https://facebook.com/shahin.alam.j" target="_blank" title="Facebook"><img src="image/icons/facebook.png" alt="Facebook"></a></li>
+                    <li><a href="https://join.skype.com/invite/wEGRwcjDVLXy" target="_blank" title="Skype"><img src="image/icons/skype.png" alt="Skype"></a></li>
+                    <li><a href="https://twitter.com/shahin_js_" target="_blank" title="Twitter"><img src="image/icons/twitter.png" alt="Twitter"></a></li>
+                    <li><a href="https://linkedin.com/in/freelancer-shahin" target="_blank" title="Linkedin"><img src="image/icons/linkedin.png" alt="Linkedin"></a></li>
+                    <li><a href="https://www.youtube.com/channel/UCKJ0A_C4a_yq2RWz3kH9KCw" target="_blank" title="YouTube"><img src="image/icons/youtube.png" alt="YouTube"></a></li>
+                </ul>
+            </div>
+            <div class="col_6 left"><img src="image/icons/copyright.png" alt="copyright" width="20px"> 2023 | <span style="color: aqua;">Shahin Alam</span></div>
+        </div>
+    </div><!-- container -->
+</footer><!-- footer section -->
+
+</main><!-- main contents -->
+</body>
+</html>
+
+<!-- on scroll events -->
+<script>
+    window.onscroll = function() {wScroll()};
+    function wScroll() {
+        // sticky header
+        if (document.documentElement.scrollTop > 80) {
+            document.querySelector("header").className = "sticky"; // sticky header in desktop
+            document.querySelector(".header_logo img").src = "image/logo.svg"; // logo change in desktop
+            document.querySelector("#mobileHeader").className = "sticky"; // sticky header in tablet, mobile
+            document.querySelector(".mobile_logo img").src = "image/logo.svg"; // logo change in tablet, mobiles
+            document.querySelector("#whatsappChat a").className = "active"; // show whatsapp icon
+        } else {
+            document.querySelector("header").className = ""; // desktop header
+            document.querySelector(".header_logo img").src = "image/logo-white.svg"; // desktop logo
+            document.querySelector("#mobileHeader").className = ""; // tablet, mobile header
+            document.querySelector(".mobile_logo img").src = "image/logo-white.svg"; // tablet, mobile logo
+            document.querySelector("#whatsappChat a").className = ""; //whatsapp icon
+        }
+
+        // go to top
+        if (document.documentElement.scrollTop > 2000) {
+            document.querySelector("#topBtn").classList.add("active");
+        } else {
+            document.querySelector("#topBtn").classList.remove("active");
+        }
+    };
+</script>
+
+<!-- animation on scroll -->
+<script>
+    const scrollElements = document.querySelectorAll(".js-scroll");
+    const elementInView = (el, dividend = 0.25) => {
+    const elementTop = el.getBoundingClientRect().top;
+    return (
+        elementTop <=
+        (window.innerHeight || document.documentElement.clientHeight) / dividend
+        );
+    };
+    const elementOutofView = (el) => {
+    const elementTop = el.getBoundingClientRect().top;
+    return (
+        elementTop > (window.innerHeight || document.documentElement.clientHeight)
+        );
+    };
+    const displayScrollElement = (element) => {
+        element.classList.add("scrolled");
+    };
+    const hideScrollElement = (element) => {
+        element.classList.remove("scrolled");
+    };
+    const handleScrollAnimation = () => {
+        scrollElements.forEach((el) => {
+        if (elementInView(el, 1.25)) {
+            displayScrollElement(el);
+        } else if (elementOutofView(el)) {
+            hideScrollElement(el)
+        }
+    })
+    }
+    window.addEventListener("scroll", () => { 
+        handleScrollAnimation();
+    });
+</script>

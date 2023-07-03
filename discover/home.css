@@ -1,0 +1,203 @@
+@font-face {font-family: exo; src: url(/files/Exo-Regular.otf);}
+@font-face {font-family: aero; src: url(/files/AERO_03.ttf);}
+* {padding: 0; margin: 0; box-sizing: border-box; user-select: none; -ms-user-select: none; -webkit-user-select: none;}
+::-webkit-scrollbar {display: none;}
+html, body {font-family: exo; letter-spacing: 1px; color: #444; scroll-behavior: smooth; overflow-x: hidden;}
+ul {list-style-type: none;}
+a {text-decoration: none; color: #672178; transition: all 0.3s;}
+a:hover {color: #0088aa;}
+p {line-height: 25px; margin-bottom: 15px; text-align: justify;}
+h1, h2, h3, h4, h5, h6 {font-weight: normal;}
+button {border: none; background: none; cursor: pointer;}
+section {padding: 50px 0;}
+
+/* section title */
+.secTitle {text-align: center; margin-bottom: 40px;}
+.secTitle p {text-align: center; padding: 10px 0; max-width: 500px; margin: auto; color: #999; font-style: italic;}
+.secTitle h1 {font-family: aero; font-size: 45px; color: #CD87DE; position: relative; display: inline-block; transition: all 1s; z-index: 2;}
+.secTitle h1 span {color: #00CCFF;}
+.secTitle h1::before {content: ""; background: #00CCFF60; height: 50%; width: 5px; position: absolute; left: -10px; top: 0;}
+.secTitle h1::after {content: ""; background: #CD87DE60; height: 50%; width: 5px; position: absolute; right: -10px; bottom: 0;}
+
+    /* codes for whatsapp button */
+#whatsappChat {position: fixed; z-index: 10; bottom: 30px; left: 20px;}
+#whatsappChat button {width: 40px; height: 40px; overflow: hidden; position: relative; transform: scale(0); transition: all 0.3s;}
+#whatsappChat button.active {transform: scale(1);}
+#whatsappChat button img:first-child {width: 100%; position: absolute; top: 0; left: 0; transition: all 0.5s;}
+#whatsappChat button img:last-child {width: 100%; position: absolute; top: 0; left: 0; transform: scale(0); transition: all 0.5s;}
+#whatsappChat button:hover img:first-child {transform: scale(0);}
+#whatsappChat button:hover img:last-child {transform: scale(1);}
+/* chat box */
+#whatsappChat .chatBox {width: 250px; height: 250px; color: #1d1d1d; background: #f3f3f9; position: absolute; bottom: 110%; left: 0; border-radius: 6px; text-align: center; padding: 15px; overflow: hidden; transition: all 0.3s; transform: scale(0);  transform-origin: left bottom;}
+#whatsappChat .chatBox.active {transform: scale(1);}
+#whatsappChat .chatBox img {width: 120px; margin-bottom: 10px;}
+
+    /* codes for back to top */
+#topBtn {width: 50px; position: fixed; z-index: 99; bottom: 100%; right: 20px; cursor: pointer; transition: all 1s;}
+#topBtn:hover {filter: grayscale(100%);}
+#topBtn.active {animation: goToTop 2s infinite; bottom: 30px;}
+    @keyframes goToTop {50% {padding-bottom: 10px;}  100% {padding-bottom: 0;}}
+
+            /* header section start from here */
+header {position: fixed; top: 0; left: 0; width: 100%; padding: 20px 0; transition: all 0.3s; z-index: 10;}
+header .container {display: flex; justify-content: space-between; flex-wrap: wrap;}
+header .header_logo {max-width: 180px; overflow: hidden; display: block; align-self: center;}
+
+/* menu items */
+header #menuItems {align-self: center;}
+header #menuItems ul li {display: inline-block; margin: 0 5px;}
+header #menuItems ul li a {position:relative; font-size: 16px; text-align:center; color: #fff; padding: 9px 10px 5px; display: block;}
+header #menuItems ul li a b {font-weight: normal;}
+header #menuItems ul li a span {position:absolute; transition: transform 0.5s;}
+header #menuItems ul li a span:nth-child(1), header #menuItems ul li a span:nth-child(3){width:100%; height:1px; background:#00CCFF;}
+header #menuItems ul li a span:nth-child(1) {top:0; left:0; transform-origin: right;}
+header #menuItems ul li a:hover span:nth-child(1) {transform: scaleX(0); transform-origin: left; transition:transform .5s;}
+header #menuItems ul li a span:nth-child(3) {bottom:0; left:0; transform-origin: left;}
+header #menuItems ul li a:hover span:nth-child(3) {transform: scaleX(0); transform-origin: right; transition:transform .5s;}
+header #menuItems ul li a span:nth-child(2), header #menuItems ul li a span:nth-child(4){width:1px; height:100%; background:#CD87DE;}
+header #menuItems ul li a span:nth-child(2) {top:0; left:0; transform:scale(0); transform-origin: bottom;}
+header #menuItems ul li a:hover span:nth-child(2) {transform: scale(1); transform-origin: top; transition:transform .5s;}
+header #menuItems ul li a span:nth-child(4) {top:0; right:0; transform:scale(0); transform-origin: top;}
+header #menuItems ul li a:hover span:nth-child(4) {transform: scale(1); transform-origin: bottom; transition:transform .5s;}
+
+/* hamburger menu */
+header ul#hamburger_icon {width: 50px; overflow: hidden; cursor: pointer; position: relative; display: none;}
+header ul#hamburger_icon li {position: absolute; transform: translateY(-50%); width: 60%;  height: 2px; background: #fff; transition: 0.3s; border-radius: 40%;}
+header ul#hamburger_icon li:nth-of-type(1) {top: 30%;  left: 20%; transition-delay: 0.3s; opacity: 1;}
+header ul#hamburger_icon li:nth-of-type(2) {top: 50%;  left: 20%; transition-delay: 0s;}
+header ul#hamburger_icon li:nth-of-type(3) {top: 70%;  right: 20%; transition-delay: 0.3s; opacity: 1;}
+header ul#hamburger_icon.active li:nth-of-type(1) {left: 100%; transition-delay: 0s; opacity: 0;}
+header ul#hamburger_icon.active li:nth-of-type(2) {transform: translateY(-50%) rotate(405deg); transition-delay: .5s;}
+header ul#hamburger_icon.active li:nth-of-type(3) {right: 100%; transition-delay: 0s; opacity: 0;}
+header ul#hamburger_icon li:nth-of-type(2)::before {content: ''; position: absolute; top: -150px;  left: 0; width: 100%;  height: 100%; background: #fff; transform: rotate(90deg); transition: 0.9s; transition-delay: .3s; border-radius: 40%;}
+header ul#hamburger_icon.active li:nth-of-type(2)::before {top: 0; transition-delay: 0.3s;}
+
+/* mobile menu */
+header nav#mobile_menu_wrapper {position: fixed; top: 0; left: 0; min-width: 230px; min-height: 300px; background: #CD87DEef; z-index: 10; overflow: hidden; border-radius: 0 0 30% 0; transform: scale(0); transition: all 0.5s; transform-origin: top left; opacity: 0; display: none;}
+header nav#mobile_menu_wrapper::before {content: ""; width: 100px; height: 100px; background: #00ccff40; position: absolute; bottom: -50px; left: -50px; border-radius: 50%;}
+header nav#mobile_menu_wrapper::after {content: ""; width: 100px; height: 100px; background: #00ccff40; position: absolute; top: -50px; right: -50px; border-radius: 50%;}
+header nav#mobile_menu_wrapper.active {transform: scale(1); opacity: 1;}
+header nav#mobile_menu_wrapper .content {position: absolute; top: 50%; transform: translateY(-50%); text-align: center; width: 100%;}
+header nav#mobile_menu_wrapper ul li a {color: #fff; margin-bottom: 15px; display: inline-block; position: relative;}
+header nav#mobile_menu_wrapper ul li a::before {content: ""; width: 1px; height: 0; background: #fff; position: absolute; top: 0; left: -10px; transition: all 0.3s;}
+header nav#mobile_menu_wrapper ul li a::after {content: ""; width: 1px; height: 0; background: #fff; position: absolute; bottom: 0; right: -10px; transition: all 0.3s;}
+header nav#mobile_menu_wrapper ul li a:hover::before, header nav#mobile_menu_wrapper ul li a:hover::after {height: 100%;}
+header nav#mobile_menu_wrapper .tel_mail a {width: 30px; display: inline-block; margin: 10px;}
+header nav#mobile_menu_wrapper .tel_mail a img {width: 100%;}
+/* contact */
+header .contact {align-self: center;}
+header .contact a {width: 30px; display: inline-block; margin-left: 25px;}
+header .contact a img {width: 100%;}
+/* header sticky */
+header.sticky {background: #ffffffee; padding: 5px 0; border-bottom: 1px solid #CD87DE;}
+header.sticky #menuItems ul li a {color: #555;}
+header.sticky ul#hamburger_icon li {background: #00CCFF;}
+header.sticky ul#hamburger_icon.active li:nth-of-type(2) {background: #CD87DE;}
+header.sticky ul#hamburger_icon li:nth-of-type(2)::before {background: #CD87DE;}
+            /* header section end here */
+            
+            /* banner section start from here */
+#banner {background: linear-gradient(#000000aa, #000000aa), url(/image/demoBg.jpg) no-repeat center fixed; background-size: cover; text-align: center; padding: 200px 0 150px; clip-path: polygon(0 0, 100% 0%, 100% 95%, 0 100%); -webkit-clip-path: polygon(0 0, 100% 0%, 100% 95%, 0 100%);}
+#banner h1 {color: aqua; margin-bottom: 20px; font-weight: bold;}
+#banner h4 {color: #fff;}
+            /* banner section end here */
+
+            /* mian content start from here */
+#main_content .title {max-width: 500px; color: #0088aa; margin: 0 auto 30px; text-align: center;}
+#main_content .searchBar {max-width: 400px; box-shadow: inset 0 0 10px #ddd; padding: 10px; border-radius: 6px; display: flex; margin-left: auto; margin-bottom: 25px;}
+#main_content .searchBar input {width: 100%; border: none; outline: none; background: none; color: #672178;  font-size: 18px; font-family: exo; margin-left: 10px; letter-spacing: 3px;}
+#main_content .searchBar input::placeholder {color: #0088aa;}
+#main_content #discover_wrapper .discover_box_wrapper {padding: 20px;}
+#main_content #discover_wrapper .discover_box_wrapper .discover_box {box-shadow: inset 0 0 10px #ddd; overflow: hidden; border-radius: 10px;}
+#main_content #discover_wrapper .discover_box_wrapper .discover_box .demo {width: 100%; height: 300px; overflow: scroll;}
+#main_content #discover_wrapper .discover_box_wrapper .discover_box .text {padding: 20px;}
+#main_content #discover_wrapper .discover_box_wrapper .discover_box .tags {color: #999; font-size: 13px; text-align: right; display: block;}
+#main_content #discover_wrapper .discover_box_wrapper .discover_box .tags span {color: #CD87DE;}
+#main_content #discover_wrapper .discover_box_wrapper .discover_box .name {margin: 20px 0; text-align: center; font-size: 25px;}
+            /* mian content end here */
+
+    /* codes for shadow button */
+#shadowBtn {width: 100%; height: 100%; background: #eee; position: relative;}
+#shadowBtn .btn_shadow {font-size: 20px; display: inline-block; padding: 5px 20px; color: #444; border: 2px solid #444; box-shadow: 5px 5px 0 #444, -5px -5px 0 #444, -5px 5px 0 #444, 5px -5px 0 #444; transition: 0.5s ease-in-out; font-family: tahoma; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);}
+#shadowBtn .btn_shadow:hover {color: #0cf; border-color: #0cf; box-shadow: 20px 5px 0 #0cf, -20px -5px 0 #0cf;}
+
+    /* codes for border slice button */
+#border_slice_button {width: 100%; height: 100%; background: green; position: relative;}
+#border_slice_button .btn_border_slice {display: inline-block;  font-size: 20px;  text-align: center;  color: #fff;  padding: 5px 15px;  font-family: tahoma; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);}
+#border_slice_button .btn_border_slice:hover {color: #0cf;}
+#border_slice_button .btn_border_slice span {position: absolute; transition: transform 0.5s;}
+#border_slice_button .btn_border_slice span:nth-child(1),
+#border_slice_button .btn_border_slice span:nth-child(3){width: 100%; height: 2px; background: #fff;}
+#border_slice_button .btn_border_slice span:nth-child(1) {top: 0; left: 0; transform-origin: right;}
+#border_slice_button .btn_border_slice:hover span:nth-child(1) {transform: scaleX(0); transform-origin: left; transition:transform .5s;}
+#border_slice_button .btn_border_slice span:nth-child(3) {bottom: 0; left: 0; transform-origin: left;}
+#border_slice_button .btn_border_slice:hover span:nth-child(3) {transform: scaleX(0); transform-origin: right; transition: transform .5s;}
+#border_slice_button .btn_border_slice span:nth-child(2),
+#border_slice_button .btn_border_slice span:nth-child(4){width: 3px; height: 100%; background: #0cf;}
+#border_slice_button .btn_border_slice span:nth-child(2) {top: 0; left: 0; transform: scale(0); transform-origin: bottom;}
+#border_slice_button .btn_border_slice:hover span:nth-child(2) {transform: scale(1); transform-origin: top; transition:transform .5s;}
+#border_slice_button .btn_border_slice span:nth-child(4) {top: 0; right: 0; transform: scale(0); transform-origin: top;}
+#border_slice_button .btn_border_slice:hover span:nth-child(4) {transform: scale(1); transform-origin: bottom; transition: transform .5s;}
+
+    /* codes for simple login form */
+#simpleLoginForm {background: #f9f9f9; width: 100%; height: 100%; position: relative;}
+#simpleLoginForm form {background: #fff; width: 280px; padding: 10px; border-radius: 5px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); box-shadow: 0 0 10px #ddd; text-align: center;}
+#simpleLoginForm form input:not([type=submit]) {width: 100%; margin: 10px 0; border: none; outline: none; background: none; box-shadow: inset 0 0 10px #eee; padding: 10px; border-radius: 5px; font-family: tahoma;}
+#simpleLoginForm form input[type=submit] {background: #0cf; color: #fff; width: 50%; border: none; padding: 5px; border-radius: 5px; cursor: pointer; font-family: tahoma;}
+
+    /* codes for online connectivity check */
+#checkConnectivity {background: #333; color: #fff; position: relative; width: 100%; height: 100%;}
+#checkConnectivity .text {font-family: tahoma; font-size: 20px; position: absolute; top: 50%; transform: translateY(-50%); width: 100%; text-align: center;}
+
+            /* footer section start from here */
+footer {background: #222; color: #fff; font-size: 20px; margin-top: 30px;}
+footer .logo {width: 200px; margin: -30px auto 0; background: #222; padding: 10px 30px; border-radius: 30px;}
+footer .wrapper {flex-direction: row-reverse;}
+footer .wrapper .left {padding: 10px 0;}
+footer .wrapper .right ul {display: flex; justify-content: end;}
+footer .wrapper .right ul li {width: 20px; padding: 10px 20px;}
+footer .wrapper .right ul li a img {width: 20px;}
+            /* footer section end here */
+
+            /* codes for responsive start from */
+/* for tablet */
+@media screen and (max-width: 800px) {
+
+    header #menuItems {display: none;}
+    header .contact {display: none;}
+    header ul#hamburger_icon {display: block;}
+    header nav#mobile_menu_wrapper {display: block;}
+
+}
+
+/* for mobile */
+@media screen and (max-width: 500px) {
+
+    .secTitle h1 {font-size: 35px;}
+    #main_content #discover_wrapper .discover_box_wrapper {padding: 20px 0;}
+    footer .wrapper {text-align: center;}
+    footer .wrapper .right ul {justify-content: center;}
+
+}
+                /* codes for responsive end here */
+
+/* flowing button */
+.flowingBtn {font-size: 18px; color: #CD87DE; border-radius: 6px; text-align: center; position: relative; overflow: hidden; z-index: 1; transition: 0.5s; padding: 8px 20px; border: 1px solid #CD87DE;}
+.flowingBtn span {position: absolute; width: 25%; height: 100%; background-color: #CD87DE; transform: translateY(150%); border-radius: 50%; left: calc((var(--n) - 1) * 25%); transition: 0.5s; transition-delay: calc((var(--n) - 1) * 0.1s); z-index: -1;}
+.flowingBtn:hover {color: #fff; border-color: transparent;}
+.flowingBtn:hover span {transform: translateY(30%) scale(2);}
+.flowingBtn span:nth-child(1) {--n: 1;}
+.flowingBtn span:nth-child(2) {--n: 2;}
+.flowingBtn span:nth-child(3) {--n: 3;}
+.flowingBtn span:nth-child(4) {--n: 4;}
+
+        /* codes for dark mode  start from here */
+.themeChangeBtn {width: 40px; height: 40px; position: fixed; z-index: 9; right: 20px; top: 50%; transform: translateY(-50%);}
+.themeChangeBtn img {width: 100%;}
+/* others */
+body.dark {background: #1D2A35; color: #ddd;}
+body.dark a:not(.flowingBtn) {color: #00CCFF;}   body.dark a:hover:not(.flowingBtn) {color: #CD87DE;}
+body.dark .secTitle h1 {color: #00CCFF;}    body.dark .secTitle h1 span {color: #CD87DE;}   body.dark .secTitle h1::before {background: #CD87DE60;} body.dark .secTitle h1::after {background: #00CCFF60;}
+/* main contents */
+body.dark #main_content .title {color: #CD87DE;} body.dark #main_content .searchBar {box-shadow: none; border: 1px dashed; border-color: #00CCFF #CD87DE;} body.dark #main_content .searchBar input {color: #00CCFF;} body.dark #main_content .searchBar input::placeholder {color: #CD87DE;}   body.dark #main_content #discover_wrapper .discover_box_wrapper .discover_box {box-shadow: none; border: 1px solid #aaa;}
+        /* codes for dark mode  end here */

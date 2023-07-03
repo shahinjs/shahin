@@ -1,0 +1,235 @@
+@font-face {font-family: rowdies; src: url(../files/Rowdies.ttf);}
+@font-face {font-family: rajdhani; src: url(../files/Rajdhani.ttf);}
+* {padding: 0; margin: 0; box-sizing: border-box; user-select: none; -ms-user-select: none; -webkit-user-select: none;}
+::-webkit-scrollbar {display: none;}
+html, body {font-family: rajdhani; letter-spacing: 1px; color: #eee; background: linear-gradient(#1D2A35f5, #1D2A35f5), url(/image/bodyBg.gif) fixed; background-repeat: no-repeat; background-size: cover; scroll-behavior: smooth; overflow-x: hidden;}
+ul {list-style-type: none;}
+a {text-decoration: none; color: #ff80bd; transition: all 0.3s;}
+a:hover {color: #20C997;}
+p {line-height: 25px; margin-bottom: 15px; text-align: justify;}
+h1, h2, h3, h4, h5, h6 {font-weight: normal;}
+button {border: none; background: none; cursor: pointer;}
+section {padding: 100px 0;}
+
+/* section title */
+.secTitle {text-align: center; margin-bottom: 40px; position: relative;}
+.secTitle h2 {font-size: 200px; color: #ffffff10; position: absolute; left: 50%; transform: translate(-50%, -50%); top: 50%;}
+.secTitle p {text-align: center; padding: 10px 0; max-width: 500px; margin: auto; color: #eee; font-style: italic; letter-spacing: 5px;}
+.secTitle h1 {font-family: rowdies; font-size: 45px; position: relative; display: inline-block; transition: all 1s; z-index: 2; background: linear-gradient(-45deg, #20C997, #fff, #ff80bd, #fff); background-size: 300%; -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: sec_animation 0s ease-in-out infinite; -moz-animation: sec_animation 1s ease-in-out infinite; -webkit-animation: sec_animation 1s ease-in-out infinite;}
+    @keyframes sec_animation {
+        0% { background-position: 0px 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0px 50%; }
+    }
+
+    /* codes for whatsapp button */
+#whatsappChat {position: fixed; z-index: 10; bottom: 50%; transform: translateY(-50%); right: 0;}
+#whatsappChat a {width: 200px; height: 40px; overflow: hidden; position: relative; margin-right: -210px; display: inline-block; transition: all 0.3s; background: #eee; border-radius: 15px;}
+#whatsappChat a.active {margin-right: -150px;}
+#whatsappChat a img {width: 40px; position: absolute; top: 0; left: 0; transition: all 0.5s; padding: 5px; margin-left: 5px;}
+
+    /* codes for back to top */
+#topBtn {width: 50px; position: fixed; z-index: 99; bottom: 100%; right: 20px; cursor: pointer; transition: all 1s;}
+#topBtn:hover {filter: grayscale(100%);}
+#topBtn.active {animation: goToTop 1.5s infinite; bottom: 100px;}
+    @keyframes goToTop {50% {padding-bottom: 10px;}  100% {padding-bottom: 0;}}
+
+            /* header section start from here */
+header {position: fixed; width: 200px; height: 100%; top: 0; left: 0; overflow: hidden; transition: all 0.3s; z-index: 10; border-right: 5px solid #fff;}
+header .header_logo {max-width: 100%; overflow: hidden; display: block; align-self: center; margin: 30px;}
+/* menu items */
+header #menuItems ul li {padding: 10px;}
+header #menuItems ul li a {display: flex; position:relative; color: #fff; padding: 10px; font-family: rowdies; transition: all 0.3s;}
+header #menuItems ul li a:hover {box-shadow: inset 0 0 10px #101010; border-radius: 10px;}
+header #menuItems ul li a img {width: 20px; align-self: center;}
+header #menuItems ul li a span {align-self: center; margin-left: 10px;}
+
+/* header sticky */
+header.sticky {background: #ffffffee; border-color: #20C997;}
+header.sticky #menuItems ul li a {color: #1d1d1d;}
+header.sticky #menuItems ul li a:hover {box-shadow: inset 0 0 10px #ccc;}
+header.sticky ul#hamburger_icon li {background: #5cdb95;}
+header.sticky ul#hamburger_icon.active li:nth-of-type(2) {background: #b9da88;}
+header.sticky ul#hamburger_icon li:nth-of-type(2)::before {background: #b9da88;}
+            /* header section end here */
+            
+            /* mobile header section start from here */
+#mobileHeader {padding: 40px 20px; position: fixed; top: 0; left: 0; z-index: 10; width: 100%; transition: all 0.3s; display: none;}
+#mobileHeader a.mobile_logo {width: 180px; display: inline-block;}
+    /* hamburger menu */
+#mobileHeader .hamburger {margin-right: 20px; cursor: pointer;}
+#mobileHeader .hamburger .bar {width: 50px; height: 3px; display: block; -webkit-transition: 0.5s; transition: 0.5s; background-color: #fff; margin: 7px;}
+#mobileHeader .hamburger .bar:nth-child(1) {width: 200%;}
+#mobileHeader .hamburger .bar:nth-child(2) {width: 150%;}
+#mobileHeader .hamburger .bar:nth-child(3) {width: 100%;}
+#mobileHeader .hamburger.active .bar:nth-child(2) {opacity: 0;}
+#mobileHeader .hamburger.active .bar:nth-child(1) { -webkit-transform: translateY(8px) rotate(-315deg); transform: translateY(8px) rotate(-300deg); width: 200%;}
+#mobileHeader .hamburger.active .bar:nth-child(3) { -webkit-transform: translateY(-10px) rotate(-45deg); transform: translateY(-10px) rotate(-30deg); width: 200% !important;}
+
+    /* sticky */
+#mobileHeader.sticky {background: #ffffffee; padding: 20px; border-bottom: 2px solid #20C997;}
+#mobileHeader.sticky .hamburger .bar {background: #20C997;}
+#mobileHeader.sticky .hamburger.active .bar {background: #ff80bd;}
+            /* mobile header section end here */
+            
+            /* mobile nav section start from here */
+nav#mobileNav {position: fixed; left: 0; bottom: -100%; z-index: 10; background-color: #ffffffee; width: 100%; border-top: 2px solid #ff80bd; display: none; transition: all 0.3s;}
+nav#mobileNav.active {bottom: 0 !important}
+nav#mobileNav ul {display: flex; flex-wrap: nowrap; justify-content: space-around;}
+nav#mobileNav ul li {padding: 20px 0px; text-align: center;}
+nav#mobileNav ul li a {display: flex; justify-content: center; flex-wrap: wrap;}
+nav#mobileNav ul li a img {width: 30px;}
+nav#mobileNav ul li a span {font-size: 20px; flex: 100%;}
+            /* mobile nav section end here */
+
+main#main_content {margin-left: 200px;}
+
+            /* banner section start from here */
+#banner {padding: 300px 0 300px; background: linear-gradient(#00000090, #00000090), url(../image/hero-bg.jpg) fixed; background-repeat: no-repeat; background-size: cover; background-position: center; clip-path: polygon(0 0, 100% 0%, 100% 95%, 0 100%); -webkit-clip-path: polygon(0 0, 100% 0%, 100% 95%, 0 100%);}
+#banner .main_content {color: #fff; text-align: center;}
+#banner .main_content .text {font-size: 30px; padding: 10px;}
+#banner .main_content .autoText {color: #5cdb95; font-size: 60px; margin: 20px 0; font-family: rowdies; display: inline; padding: 0 20px;}
+#banner .main_content a.hireBtn {background: #eee; padding: 10px 20px; border-radius: 5px; color: #333; font-weight: bold; display: inline-block; margin: 20px 0;}
+#banner .main_content .social ul li {display: inline-block; padding: 10px;}
+#banner .main_content .social ul li a {width: 30px; display: block; overflow: hidden;}
+#banner .main_content .social ul li a img {width: 100%;}
+            /* banner section end here */
+
+            /* about section start from here */
+#about_me b {color: #fff;}
+#about_me .row {flex-direction: row-reverse;}
+#about_me .desc {align-self: center; margin-left: auto;}
+#about_me .desc p {text-align: right;}
+#about_me .details {align-self: center;}
+#about_me .details ul li {display: flex; flex-wrap: wrap; justify-content: space-between; margin: 25px 0;}
+#about_me .details ul li .left {align-self: center; display: flex;}
+#about_me .details ul li .left img {width: 20px; margin-right: 10px; align-self: center;}
+#about_me .details ul li .left b {align-self: center; color: #0088aa;}
+#about_me .details #resumeDownload {position: relative; text-align: center; margin: 20px 0;}
+#about_me .details #resumeDownload a {background: #444; color: #f5f5f5; padding: 10px 15px; border-radius: 5px; transition: all 0.5s; display: inline-block;}
+#about_me .details #resumeDownload a:hover {background: #f5f5f5; color: #444;}
+#about_me .details #resumeDownload span.tooltip {position: absolute; bottom: -100%; left: 50%; transform: translateX(-50%) scale(0); background: #5cdb95; color: #444; padding: 10px; border-radius: 5px; transform-origin: bottom; transition: all 0.5s;}
+#about_me .details #resumeDownload span.tooltip.active {bottom: 150%; transform: scale(1) translateX(-50%);}
+#about_me .image {border: 5px solid; border-color: #5cdb95 #05386b; border-radius: 44% 56% 63% 37% / 37% 33% 67% 63%; align-self: center; overflow: hidden; margin-left: auto;}
+#about_me .image img {width: 100%; transform: scale(1.1); filter: grayscale(100%);}
+/* skills */
+#about_me .skills-bar {align-self: center; margin-right: auto; margin-top: 30px;}
+#about_me .skills-bar .secTitle {text-align: left;}
+#about_me .skills-bar .secTitle p {margin: 0; text-align: left;}
+#about_me .skills-bar .bar {margin: 25px 0;}
+#about_me .skills-bar .bar .info {margin-bottom: 10px; display: block; color: #eee; letter-spacing: 5px;}
+#about_me .skills-bar .bar .progress-line {position: relative; height: 7px; width: 100%; box-shadow: inset 0 0 5px #bbb; border-radius: 10px;}
+#about_me .skills-bar .bar .progress-line span {position: absolute; background: #5cdb95; height: 100%; border-radius: 10px; transform: scaleX(0); transform-origin: left;}
+.scrolled.animateSkill .bar .progress-line span {animation: animateSkill 1s cubic-bezier(1, 0, 0.5, 1) forwards;}
+  @keyframes animateSkill {100% {transform: scaleX(1);}}
+#about_me .skills-bar .bar .progress-line .html {width: 98%;}
+#about_me .skills-bar .bar .progress-line .css {width: 93%;}
+#about_me .skills-bar .bar .progress-line .bootstrap {width: 95%;}
+#about_me .skills-bar .bar .progress-line .javascript {width: 80%;}
+#about_me .skills-bar .bar .progress-line .wordpress {width: 75%;}
+#about_me .skills-bar .bar .progress-line span::before {position: absolute; content: ""; height: 0; right: 0; top: -14px; width: 0; border: 7px solid transparent; border-bottom-width: 0px; border-right-width: 0px; border-top-color: #672178;}
+#about_me .skills-bar .bar .progress-line span::after {position: absolute; right: 0; top: -35px; font-size: 12px; background: #672178; color: #fff; padding: 5px 8px; border-radius: 3px;}
+#about_me .skills-bar .bar .progress-line .html::after {content: "98%";}
+#about_me .skills-bar .bar .progress-line .css::after {content: "93%";}
+#about_me .skills-bar .bar .progress-line .bootstrap::after {content: "95%";}
+#about_me .skills-bar .bar .progress-line .javascript::after {content: "80%";}
+#about_me .skills-bar .bar .progress-line .wordpress::after {content: "75%";}
+            /* about section end here */
+            
+            /* counter section start from here */
+#counter {background: linear-gradient(#5cdb95cc, #5cdb95cc), url(../image/counter/bg.jpg) no-repeat center fixed; background-size: cover; text-align: center; color: #fff; border-radius: 0% 100% 0% 100% / 92% 8% 92% 8% ;}
+#counter .item {padding: 20px 0;}
+#counter .item img {width: 100px; transition: all 0.5s;}
+#counter .item:hover img {filter: grayscale(100%); transform: rotateY(180deg);}
+#counter .item h2 {margin: 10px 0; color: #05386b; font-weight: bold;}
+            /* counter section end here */
+
+            /* service section start from here */
+#services .service_wrapper {box-shadow: inset 0 0 10px #ddd; padding: 20px 10px; text-align: center; height: 100%; border-radius: 6px;}
+#services .service_wrapper img {width: 40%; transition: all 0.5s;}
+#services .service_wrapper:hover img {transform: rotateY(180deg); filter: grayscale(100%);}
+.scrolled.serviceAnimate img {transform: rotateY(360deg);}
+#services .service_wrapper h2 {margin: 10px 0; font-family: rowdies; color: #5cdb95; text-align: right;}
+#services .portfolioBtn {display: flex; margin-top: 30px; justify-content: center;}
+            /* service section end here */
+
+            /* hire section start from here */
+#hire {background: url(../image/keyboard.jpg) no-repeat center fixed; color: #fff; text-align: center; border-radius: 100% 0% 100% 0% / 8% 92% 8% 92% ;}
+#hire h1 {font-size: 40px;}
+#hire a {background: #5cdb95; color: #05386b; margin-top: 30px; display: inline-block; padding: 10px 20px; border-radius: 4px;}
+#hire a:hover {background: #05386b; color: #eed7f4;}
+            /* hire section end here */
+
+            /* review section start from here */
+#review .review_wrapper {display: flex; overflow: hidden; width: 100%; padding: 180px 0; position: relative;}
+#review .review_wrapper .review_box {padding: 30px; overflow: hidden; transition: all 0.3s; position: absolute; top: 50%; left: 25%; transform: translateY(-100%); box-shadow: inset 0 0 20px #ddd; border-radius: 10px; width: 50%; opacity: 0;}
+#review .review_wrapper .review_box.active {transform: translateY(-50%); opacity: 1;}
+#review .review_wrapper .review_box .quote {width: 50px; margin: 0 0 10px auto;}
+#review .review_wrapper .review_box .quote img {width: 100%;}
+#review .review_wrapper .review_box h2 {text-align: right; color: #05386b; margin: 10px 0;}
+#review .review_wrapper .review_box h4 {text-align: right; color: #0088aa;}
+            /* review section end here */
+
+            /* discover section start from here */
+#discover {background: linear-gradient(#000000cc, #000000cc), url(../image/demoBg.jpg) no-repeat center fixed; background-size: cover; text-align: center;  border-radius: 0% 100% 0% 100% / 92% 8% 92% 8% ;}
+#discover h1 {font-size: 40px; color: #05386b;}
+#discover p {color: #68e1ff; text-align: center; padding-top: 10px; font-size: 20px;}
+#discover a {background: #fff; color: #444; margin-top: 30px; display: inline-block; padding: 10px 20px; border-radius: 4px; border: 1px solid transparent;}
+#discover a:hover {border-color: #fff; background: none; color: #fff;}
+            /* discover section end here */
+            
+            /* contact section start from here */
+#contact .row {flex-direction: row-reverse;}
+#contact .map {padding: 10px; align-self: center;}
+#contact #contact_form {background: #f5f5f5; padding: 20px; border-radius: 10px; text-align: center;}
+#contact #contact_form .input {box-shadow: inset 0 0 10px #ddd; display: flex; margin-bottom: 20px; padding: 5px 10px; border-radius: 10px;}
+#contact #contact_form .input img {width: 20px; align-self: center;}
+#contact #contact_form .input input {width: 100%; padding: 10px; border: none; background: none; outline: none; color: #0088aa;}
+#contact #contact_form textarea {width: 100%; padding: 10px; border: none; background: none; outline: none; resize: vertical; box-shadow: inset 0 0 10px #ddd; border-radius: 10px; color: #0088aa;}
+#contact #contact_form ::placeholder {color: #0088aa; font-family: rajdhani; letter-spacing: 2px;}
+#contact #contact_form button {font-family: rajdhani; width: 50%; margin-top: 20px;}
+#contact .info {text-align: center; padding: 20px 0;}
+#contact .info img {width: 80px; height: 80px; background: #fff; margin-bottom: 20px; border-radius: 50%; padding: 20px; box-shadow: 0 0 10px #aaa;}
+            /* contact section end here */
+
+            /* footer section start from here */
+footer {background: #222; color: #fff; font-size: 20px;}
+footer .logo {width: 200px; margin: -30px auto 0; background: #222; padding: 10px 30px; border-radius: 30px;}
+footer .wrapper {flex-direction: row-reverse;}
+footer .wrapper .left {padding: 10px 0;}
+footer .wrapper .right ul {display: flex; justify-content: end;}
+footer .wrapper .right ul li {width: 20px; padding: 10px 20px;}
+footer .wrapper .right ul li a img {width: 20px;}
+            /* footer section end here */
+
+            /* codes for responsive start from */
+/* for tablet */
+@media screen and (max-width: 1024px) {
+
+    .secTitle h2 {font-size: 150px;}
+    main#main_content {margin: 0;}
+    header {display: none;}
+    #mobileHeader {display: flex; justify-content: space-between;}
+    nav#mobileNav {display: block;}
+    #review .review_wrapper .review_box {width: 80%; left: 10%;}
+
+}
+
+/* for mobile */
+@media screen and (max-width: 760px) {
+
+    .secTitle h2 {font-size: 100px;}
+    .secTitle h1 {font-size: 35px;}
+    nav#mobileNav ul li a span {font-size: 12px;}
+    #banner .main_content {display: block;}
+    #banner .main_content .image {width: 250px; margin: 50px auto 0;}
+	#banner .main_content .text .autoText {text-align: center;}
+	#about_me .desc p {text-align: justify;}
+    #about_me .details ul li {font-size: 12px;}
+    #about_me .details ul li .left img {width: 15px; margin-right: 5px;}
+    #review .review_wrapper .review_box {width: 100%; left: 0;}
+    footer .wrapper {text-align: center;}
+    footer .wrapper .right ul {justify-content: center;}
+
+}
+                /* codes for responsive end here */

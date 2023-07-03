@@ -1,0 +1,185 @@
+@font-face {font-family: exo; src: url(/files/Exo-Regular.otf);}
+@font-face {font-family: aero; src: url(/files/AERO_03.ttf);}
+* {padding: 0; margin: 0; box-sizing: border-box; user-select: none; -ms-user-select: none; -webkit-user-select: none;}
+::-webkit-scrollbar {display: none;}
+html, body {font-family: exo; letter-spacing: 1px; color: #444; scroll-behavior: smooth;}
+ul {list-style-type: none;}
+a {text-decoration: none; color: #672178; transition: all 0.3s;}
+a:hover {color: #0088aa;}
+p {line-height: 25px; margin-bottom: 15px; text-align: justify;}
+h1, h2, h3, h4, h5, h6 {font-weight: normal;}
+button {border: none; background: none; cursor: pointer; font-family: exo;}
+
+    /* copy alert */
+#copyAlert {background: lawngreen; color: #1D2A35; font-size: 20px; font-weight: bold; padding: 20px; text-align: center; position: fixed; left: 0; top: 300px; z-index: 10; border-radius: 0 5px 5px 0; width: 200; transition: all 0.3s; transform: translateX(-50px); opacity: 0;}
+#copyAlert.active {transform: translate(0); opacity: 1;}
+
+    /* codes for whatsapp button */
+#whatsappChat {position: fixed; z-index: 10; bottom: 30px; left: 20px;}
+#whatsappChat button {width: 40px; height: 40px; overflow: hidden; position: relative; transform: scale(0); transition: all 0.3s;}
+#whatsappChat button.active {transform: scale(1);}
+#whatsappChat button img:first-child {width: 100%; position: absolute; top: 0; left: 0; transition: all 0.5s;}
+#whatsappChat button img:last-child {width: 100%; position: absolute; top: 0; left: 0; transform: scale(0); transition: all 0.5s;}
+#whatsappChat button:hover img:first-child {transform: scale(0);}
+#whatsappChat button:hover img:last-child {transform: scale(1);}
+/* chat box */
+#whatsappChat .chatBox {width: 250px; height: 250px; color: #1d1d1d; background: #f3f3f9; position: absolute; bottom: 110%; left: 0; border-radius: 6px; text-align: center; padding: 15px; overflow: hidden; transition: all 0.3s; transform: scale(0);  transform-origin: left bottom;}
+#whatsappChat .chatBox.active {transform: scale(1);}
+#whatsappChat .chatBox img {width: 120px; margin-bottom: 10px;}
+
+            /* header section start from here */
+header {position: sticky; top: 0; left: 0; padding: 15px 0; transition: all 0.3s; z-index: 10; background: #191919;}
+header .container {display: flex; justify-content: space-between; flex-wrap: wrap;}
+header .header_logo {max-width: 180px; overflow: hidden; display: block; align-self: center;}
+
+/* menu items */
+header #menuItems {align-self: center;}
+header #menuItems ul li {display: inline-block; margin: 0 5px;}
+header #menuItems ul li a {position:relative; font-size: 16px; text-align:center; color: #fff; padding: 9px 10px 5px; display: block;}
+header #menuItems ul li a b {font-weight: normal;}
+header #menuItems ul li a span {position:absolute; transition: transform 0.5s;}
+header #menuItems ul li a span:nth-child(1), header #menuItems ul li a span:nth-child(3){width:100%; height:1px; background:#00CCFF;}
+header #menuItems ul li a span:nth-child(1) {top:0; left:0; transform-origin: right;}
+header #menuItems ul li a:hover span:nth-child(1) {transform: scaleX(0); transform-origin: left; transition:transform .5s;}
+header #menuItems ul li a span:nth-child(3) {bottom:0; left:0; transform-origin: left;}
+header #menuItems ul li a:hover span:nth-child(3) {transform: scaleX(0); transform-origin: right; transition:transform .5s;}
+header #menuItems ul li a span:nth-child(2), header #menuItems ul li a span:nth-child(4){width:1px; height:100%; background:#CD87DE;}
+header #menuItems ul li a span:nth-child(2) {top:0; left:0; transform:scale(0); transform-origin: bottom;}
+header #menuItems ul li a:hover span:nth-child(2) {transform: scale(1); transform-origin: top; transition:transform .5s;}
+header #menuItems ul li a span:nth-child(4) {top:0; right:0; transform:scale(0); transform-origin: top;}
+header #menuItems ul li a:hover span:nth-child(4) {transform: scale(1); transform-origin: bottom; transition:transform .5s;}
+
+/* hamburger menu */
+header ul#hamburger_icon {width: 50px; overflow: hidden; cursor: pointer; position: relative; display: none;}
+header ul#hamburger_icon li {position: absolute; transform: translateY(-50%); width: 60%;  height: 2px; background: #fff; transition: 0.3s; border-radius: 40%;}
+header ul#hamburger_icon li:nth-of-type(1) {top: 30%;  left: 20%; transition-delay: 0.3s; opacity: 1;}
+header ul#hamburger_icon li:nth-of-type(2) {top: 50%;  left: 20%; transition-delay: 0s;}
+header ul#hamburger_icon li:nth-of-type(3) {top: 70%;  right: 20%; transition-delay: 0.3s; opacity: 1;}
+header ul#hamburger_icon.active li:nth-of-type(1) {left: 100%; transition-delay: 0s; opacity: 0;}
+header ul#hamburger_icon.active li:nth-of-type(2) {transform: translateY(-50%) rotate(405deg); transition-delay: .5s;}
+header ul#hamburger_icon.active li:nth-of-type(3) {right: 100%; transition-delay: 0s; opacity: 0;}
+header ul#hamburger_icon li:nth-of-type(2)::before {content: ''; position: absolute; top: -150px;  left: 0; width: 100%;  height: 100%; background: #fff; transform: rotate(90deg); transition: 0.9s; transition-delay: .3s; border-radius: 40%;}
+header ul#hamburger_icon.active li:nth-of-type(2)::before {top: 0; transition-delay: 0.3s;}
+
+/* mobile menu */
+header nav#mobile_menu_wrapper {position: fixed; top: 0; left: 0; min-width: 230px; min-height: 300px; background: #CD87DEef; z-index: 10; overflow: hidden; border-radius: 0 0 30% 0; transform: scale(0); transition: all 0.5s; transform-origin: top left; opacity: 0; display: none;}
+header nav#mobile_menu_wrapper::before {content: ""; width: 100px; height: 100px; background: #00ccff40; position: absolute; bottom: -50px; left: -50px; border-radius: 50%;}
+header nav#mobile_menu_wrapper::after {content: ""; width: 100px; height: 100px; background: #00ccff40; position: absolute; top: -50px; right: -50px; border-radius: 50%;}
+header nav#mobile_menu_wrapper.active {transform: scale(1); opacity: 1;}
+header nav#mobile_menu_wrapper .content {position: absolute; top: 50%; transform: translateY(-50%); text-align: center; width: 100%;}
+header nav#mobile_menu_wrapper ul li a {color: #fff; margin-bottom: 15px; display: inline-block; position: relative;}
+header nav#mobile_menu_wrapper ul li a::before {content: ""; width: 1px; height: 0; background: #fff; position: absolute; top: 0; left: -10px; transition: all 0.3s;}
+header nav#mobile_menu_wrapper ul li a::after {content: ""; width: 1px; height: 0; background: #fff; position: absolute; bottom: 0; right: -10px; transition: all 0.3s;}
+header nav#mobile_menu_wrapper ul li a:hover::before, header nav#mobile_menu_wrapper ul li a:hover::after {height: 100%;}
+header nav#mobile_menu_wrapper .tel_mail a {width: 30px; display: inline-block; margin: 10px;}
+header nav#mobile_menu_wrapper .tel_mail a img {width: 100%;}
+/* contact */
+header .contact {align-self: center;}
+header .contact a {width: 30px; display: inline-block; margin-left: 25px;}
+header .contact a img {width: 100%;}
+/* header sticky */
+header.sticky {background: #ffffffee; padding: 5px 0; border-bottom: 1px solid #CD87DE;}
+header.sticky #menuItems ul li a {color: #555;}
+header.sticky ul#hamburger_icon li {background: #00CCFF;}
+header.sticky ul#hamburger_icon.active li:nth-of-type(2) {background: #CD87DE;}
+header.sticky ul#hamburger_icon li:nth-of-type(2)::before {background: #CD87DE;}
+            /* header section end here */
+            
+            /* breadcrumb section start from here */
+#breadcrumb {padding: 10px 0;}
+#breadcrumb ul {display: flex; flex-wrap: wrap;}
+#breadcrumb ul li {margin-right: 10px;}
+#breadcrumb ul li a {margin-right: 10px;}
+            /* breadcrumb section end here */
+
+            /* mian content start from here */
+#main_content {padding: 25px 0; max-width: 800px; margin: auto;}
+#main_content .demo {background: green; width: 100%; height: auto; margin: 30px auto; border-radius: 5px; overflow: hidden;}
+#main_content .demo .title {background: #3b3b3b; padding: 10px 20px; color: #0cf; font-size: 25px; font-family: aero;}
+#main_content .demo .title p {color: #f5f5f5; font-size: 16px; font-family: exo; font-weight: normal;}
+#main_content .demo .demo_inner {position: relative; min-width: 100%; height: 300px; margin: auto; overflow: scroll;}
+#main_content .demo .demo_inner .btn_border_slice {display: inline-block;  font-size: 20px;  text-align: center;  color: #fff;  padding: 5px 15px;  font-family: tahoma; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);}
+#main_content .demo .demo_inner .btn_border_slice:hover {color: #0cf;}
+#main_content .demo .demo_inner .btn_border_slice span {position: absolute; transition: transform 0.5s;}
+#main_content .demo .demo_inner .btn_border_slice span:nth-child(1),
+#main_content .demo .demo_inner .btn_border_slice span:nth-child(3){width: 100%; height: 2px; background: #fff;}
+#main_content .demo .demo_inner .btn_border_slice span:nth-child(1) {top: 0; left: 0; transform-origin: right;}
+#main_content .demo .demo_inner .btn_border_slice:hover span:nth-child(1) {transform: scaleX(0); transform-origin: left; transition:transform .5s;}
+#main_content .demo .demo_inner .btn_border_slice span:nth-child(3) {bottom: 0; left: 0; transform-origin: left;}
+#main_content .demo .demo_inner .btn_border_slice:hover span:nth-child(3) {transform: scaleX(0); transform-origin: right; transition: transform .5s;}
+#main_content .demo .demo_inner .btn_border_slice span:nth-child(2),
+#main_content .demo .demo_inner .btn_border_slice span:nth-child(4){width: 3px; height: 100%; background: #0cf;}
+#main_content .demo .demo_inner .btn_border_slice span:nth-child(2) {top: 0; left: 0; transform: scale(0); transform-origin: bottom;}
+#main_content .demo .demo_inner .btn_border_slice:hover span:nth-child(2) {transform: scale(1); transform-origin: top; transition:transform .5s;}
+#main_content .demo .demo_inner .btn_border_slice span:nth-child(4) {top: 0; right: 0; transform: scale(0); transform-origin: top;}
+#main_content .demo .demo_inner .btn_border_slice:hover span:nth-child(4) {transform: scale(1); transform-origin: bottom; transition: transform .5s;}
+/* codes */
+#main_content .src_code {max-width: 100%; min-height: 500px; background: #E7E9EB; margin: 30px auto; border-radius: 5px; overflow: hidden;}
+#main_content .src_code .head {background: #3b3b3b; padding: 10px 20px; display: flex; justify-content: space-between;}
+#main_content .src_code .head .title {font-size: 25px; color: #00CCFF; font-family: aero; display: flex;}
+#main_content .src_code .head .title img {width: 25px; height: 25px; align-self: center; margin-right: 5px;}
+#main_content .src_code .head button {color: #191919; background: #0cf; align-self: center; padding: 5px 15px; border-radius: 5px; font-size: 16px; transition: all 0.3s;}
+#main_content .src_code .head button:hover {background: #CD87DE;}
+#main_content .codes {margin: 10px; background: #1D2A35; color: #f5f5f5; padding: 10px; height: 500px; border-radius: 5px; overflow: scroll; white-space: nowrap;}
+#main_content ul#prev_next_btn {display: flex; justify-content: space-between;}
+#main_content ul#prev_next_btn li a {background: #0cf; color: #1D2A35; padding: 5px 15px; border-radius: 5px;}
+            /* mian content end here */
+
+ /* border for html codes */
+ #main_content #h_t_m_l {border-left: 8px solid #f06529;}
+ /* border for css codes */
+ #main_content #c_s_s {border-left: 8px solid #2965f1;}
+
+            /* more design section start from here */
+#more_design {padding: 20px 0 30px;}
+#more_design ul li a {margin-top: 10px; display: inline-block; text-decoration: underline;}
+
+            /* footer section start from here */
+footer {background: #222; color: #fff; font-size: 20px; margin-top: 30px;}
+footer .logo {width: 200px; margin: -30px auto 0; background: #222; padding: 10px 30px; border-radius: 30px;}
+footer .wrapper {flex-direction: row-reverse;}
+footer .wrapper .left {padding: 10px 0;}
+footer .wrapper .right ul {display: flex; justify-content: end;}
+footer .wrapper .right ul li {width: 20px; padding: 10px 20px;}
+footer .wrapper .right ul li a img {width: 20px;}
+            /* footer section end here */
+
+            /* codes for responsive start from */
+/* for tablet */
+@media screen and (max-width: 800px) {
+
+    header #menuItems {display: none;}
+    header .contact {display: none;}
+    header ul#hamburger_icon {display: block;}
+    header nav#mobile_menu_wrapper {display: block;}
+
+}
+
+/* for mobile */
+@media screen and (max-width: 500px) {
+
+    footer .wrapper {text-align: center;}
+    footer .wrapper .right ul {justify-content: center;}
+
+}
+                /* codes for responsive end here */
+
+/* flowing button */
+.flowingBtn {font-size: 18px; color: #CD87DE; border-radius: 6px; text-align: center; position: relative; overflow: hidden; z-index: 1; transition: 0.5s; padding: 8px 20px; border: 1px solid #CD87DE;}
+.flowingBtn span {position: absolute; width: 25%; height: 100%; background-color: #CD87DE; transform: translateY(150%); border-radius: 50%; left: calc((var(--n) - 1) * 25%); transition: 0.5s; transition-delay: calc((var(--n) - 1) * 0.1s); z-index: -1;}
+.flowingBtn:hover {color: #fff; border-color: transparent;}
+.flowingBtn:hover span {transform: translateY(30%) scale(2);}
+.flowingBtn span:nth-child(1) {--n: 1;}
+.flowingBtn span:nth-child(2) {--n: 2;}
+.flowingBtn span:nth-child(3) {--n: 3;}
+.flowingBtn span:nth-child(4) {--n: 4;}
+
+        /* codes for dark mode  start from here */
+.themeChangeBtn {width: 40px; height: 40px; position: fixed; z-index: 9; right: 20px; top: 50%; transform: translateY(-50%);}
+.themeChangeBtn img {width: 100%;}
+/* others */
+body.dark {background: #1D2A35; color: #ddd;}
+body.dark a:not(.flowingBtn) {color: #00CCFF;}   body.dark a:hover:not(.flowingBtn) {color: #CD87DE;}
+/* main contents */
+
+        /* codes for dark mode  end here */
