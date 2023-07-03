@@ -2,7 +2,7 @@
 @font-face {font-family: rajdhani; src: url(../files/Rajdhani.ttf);}
 * {padding: 0; margin: 0; box-sizing: border-box; user-select: none; -ms-user-select: none; -webkit-user-select: none;}
 ::-webkit-scrollbar {display: none;}
-html, body {font-family: rajdhani; letter-spacing: 1px; color: #eee; background: linear-gradient(#1D2A35dd, #1D2A35dd), url(/image/bodyBg.gif) fixed; background-repeat: no-repeat; background-size: cover; scroll-behavior: smooth; overflow-x: hidden;}
+html, body {font-family: rajdhani; letter-spacing: 1px; color: #eee; background: linear-gradient(#1D2A35ee, #1D2A35ee), url(../image/bodyBg.gif) fixed; background-repeat: no-repeat; background-size: cover; scroll-behavior: smooth; overflow-x: hidden;}
 ul {list-style-type: none;}
 a {text-decoration: none; color: #ff80bd; transition: all 0.3s;}
 a:hover {color: #20C997;}
@@ -29,7 +29,7 @@ section {padding: 100px 0;}
 #whatsappChat a img {width: 40px; position: absolute; top: 0; left: 0; transition: all 0.5s; padding: 5px; margin-left: 5px;}
 
     /* codes for back to top */
-#topBtn {width: 50px; position: fixed; z-index: 99; bottom: 100%; right: 20px; cursor: pointer; transition: all 1s;}
+#topBtn {width: 40px; position: fixed; z-index: 99; bottom: 100%; right: 20px; cursor: pointer; transition: all 1s;}
 #topBtn:hover {filter: grayscale(100%);}
 #topBtn.active {animation: goToTop 1.5s infinite; bottom: 100px;}
     @keyframes goToTop {50% {padding-bottom: 10px;}  100% {padding-bottom: 0;}}
@@ -179,27 +179,22 @@ main#main_content {margin-left: 200px;}
             /* discover section end here */
             
             /* contact section start from here */
-#contact .row {flex-direction: row-reverse;}
-#contact .map {padding: 10px; align-self: center;}
-#contact #contact_form {background: #f5f5f5; padding: 20px; border-radius: 10px; text-align: center;}
-#contact #contact_form .input {box-shadow: inset 0 0 10px #ddd; display: flex; margin-bottom: 20px; padding: 5px 10px; border-radius: 10px;}
-#contact #contact_form .input img {width: 20px; align-self: center;}
-#contact #contact_form .input input {width: 100%; padding: 10px; border: none; background: none; outline: none; color: #0088aa;}
-#contact #contact_form textarea {width: 100%; padding: 10px; border: none; background: none; outline: none; resize: vertical; box-shadow: inset 0 0 10px #ddd; border-radius: 10px; color: #0088aa;}
-#contact #contact_form ::placeholder {color: #0088aa; font-family: rajdhani; letter-spacing: 2px;}
-#contact #contact_form button {font-family: rajdhani; width: 50%; margin-top: 20px;}
 #contact .info {text-align: center; padding: 20px 0;}
-#contact .info img {width: 80px; height: 80px; background: #fff; margin-bottom: 20px; border-radius: 50%; padding: 20px; box-shadow: 0 0 10px #aaa;}
+#contact .info .icon {width: 100px; height: 100px; margin: 0 auto 20px auto; box-shadow: inset 0 0 20px #111; border-radius: 50%; padding: 25px;}
+#contact .info img {width: 100%;}
+#contact .info a {color: #ddd;}
             /* contact section end here */
 
             /* footer section start from here */
-footer {background: #222; color: #fff; font-size: 20px;}
-footer .logo {width: 200px; margin: -30px auto 0; background: #222; padding: 10px 30px; border-radius: 30px;}
+footer {background: #eee; color: #111; font-size: 18px;}
+footer .logo {width: 300px; margin: -35px auto 0; background: #eee; padding: 30px 50px; border-radius: 50%;}
 footer .wrapper {flex-direction: row-reverse;}
-footer .wrapper .left {padding: 10px 0;}
+footer .wrapper .left {padding: 10px 0; display: flex; align-self: center;}
+footer .wrapper .left img {width: 20px; height: 20px; align-self: center; margin-right: 10px;}
+footer .wrapper .left span {color: #ff6ab2; margin-left: 10px; font-family: rowdies;}
 footer .wrapper .right ul {display: flex; justify-content: end;}
-footer .wrapper .right ul li {width: 20px; padding: 10px 20px;}
-footer .wrapper .right ul li a img {width: 20px;}
+footer .wrapper .right ul li {padding: 10px;}
+footer .wrapper .right ul li a img {width: 30px;}
             /* footer section end here */
 
             /* codes for responsive start from */
@@ -228,8 +223,7 @@ footer .wrapper .right ul li a img {width: 20px;}
     #about_me .details ul li {font-size: 12px;}
     #about_me .details ul li .left img {width: 15px; margin-right: 5px;}
     #review .review_wrapper .review_box {width: 100%; left: 0;}
-    footer .wrapper {text-align: center;}
-    footer .wrapper .right ul {justify-content: center;}
+    footer .wrapper .left, footer .wrapper .right ul {justify-content: center;}
 
 }
                 /* codes for responsive end here */
