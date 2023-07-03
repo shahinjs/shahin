@@ -216,10 +216,10 @@ footer .wrapper .right ul li a img {width: 30px; background: #fff; padding: 1px;
     .secTitle h2 {font-size: 100px;}
     .secTitle h1 {font-size: 35px;}
     nav#mobileNav ul li a span {font-size: 12px;}
-    #banner .main_content .text {font-size: 14px; padding: 5px 0 5px 8px;}
-    #banner .main_content .text span {padding: 5px 8px;}
-    #banner .main_content .name {font-size: 42px;}
-    #banner .main_content .autoText {font-size: 15px;}
+    #banner .main_content .text {font-size: 11.5px; padding: 5px 0 5px 5px;}
+    #banner .main_content .text span {padding: 5px;}
+    #banner .main_content .name {font-size: 35px;}
+    #banner .main_content .autoText {font-size: 13px;}
 	#about_me .desc p {text-align: justify;}
     #about_me .details ul li {font-size: 12px;}
     #about_me .details ul li .left img {width: 15px; margin-right: 5px;}
