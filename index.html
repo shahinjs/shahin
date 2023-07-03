@@ -75,8 +75,9 @@
                 <!-- banner section start from here -->
 <div id="banner">
     <div class="container main_content">
-        <h1 class="text">MORE THAN</h1>
-        <h1 class="autoText"><span class="txt-rotate" data-period="2000" data-rotate='[ "CREATIVITY", "CODING", "DEVELOPMENT " ]'></span>.</h1>
+        <div class="text">FAILURE IS THE CONDIMENT THAT GIVES <span>SUCCESS</span></div>
+        <div class="name">SHAHIN ALAM</div>
+        <h2 class="autoText"> Bangladesh based <span class="txt-rotate" data-period="2000" data-rotate='[ "Freelancer.", "Web Designer.", "Creative Developer.", "WordPress Expert." ]'></span></h2>
         <script>
             // auto typing
             let TxtRotate = function(el, toRotate, period) {
@@ -132,14 +133,14 @@
                 document.body.appendChild(css);
             };
         </script>
-        <div><a href="#" class="hireBtn">HIRE ME</a></div>
+        <div><a href="https://wa.me/+8801961900733" target="_blank" class="hireBtn">HIRE ME</a></div>
         <div class="social">
             <ul>
                 <li><a href="https://facebook.com/j.shahinalam" target="_blank" title="Facebook"><img src="image/icons/facebook.png" alt="Facebook"></a></li>
                 <li><a href="https://join.skype.com/invite/wEGRwcjDVLXy" target="_blank" title="Skype"><img src="image/icons/skype.png" alt="Skype"></a></li>
                 <li><a href="https://twitter.com/shahin_js_" target="_blank" title="Twitter"><img src="image/icons/twitter.png" alt="Twitter"></a></li>
                 <li><a href="https://linkedin.com/in/js-shahinalam" target="_blank" title="Linkedin"><img src="image/icons/linkedin.png" alt="Linkedin"></a></li>
-                <li><a href="https://www.youtube.com/@jsdevware?sub_confirmation=1" target="_blank" title="YouTube"><img src="image/icons/youtube.png" alt="YouTube"></a></li>
+                <li><a href="https://www.youtube.com/@js.shahin?sub_confirmation=1" target="_blank" title="YouTube"><img src="image/icons/youtube.png" alt="YouTube"></a></li>
             </ul>
         </div>
     </div><!-- container -->
@@ -154,53 +155,24 @@
             <p>there are few words about me</p>
         </div>
         <div class="row">
+            <div class="col_6 col_md_12 profile">
+                <img src="image/image18.png" alt="Shahin" width="100%">
+            </div>
             <div class="col_6 col_md_12 desc">
                 <p>I'm an expert <b>Front End Developer</b> with 1 year of experience creating usable, responsive and SEO friendly websites for eCommerce, educational, small business, online news media agencies, portfolios, blogging, and many more. I have completed some professional projects. I create responsive and interactive websites using HTML-5, CSS-3, Bootstrap, JavaScript and jQuery. Also I'm developing creative digital experiences for WordPress with a strong focus on delivering exceptional UX.</p>
                 <p>I use to work on <b><a href="https://fiverr.com" target="_blank" title="Freelance Services Marketplace">fiverr.com</a></b>. On the other side, I'm working as a <b>Front End Developer</b> on <b><a href="https://atztechnology.com" target="_blank" title="Trusted IT Service Company">AtZ Technology</a></b> since May, 2022. And very soon I am going to setup my developer team which name is <b><a href="https://facebook.com/jsdevware" target="_blank" title="Managed IT Service Team">JS Devware</a></b>.</p>
                 <p>If you work with me then you will feel you are in the right place. I will try to provide you with the best quality service.</p>
-            </div>
-            <div class="col_5 col_md_12 details">
-                <ul>
-                    <li>
-                        <div class="left"><img src="image/icons/arrow_right.png" alt="arrow"> <b>Birthday :</b></div>
-                        <div class="right">10 February, 2003</div>
-                    </li>
-                    <li>
-                        <div class="left"><img src="image/icons/arrow_right.png" alt="arrow"> <b>City :</b></div>
-                        <div class="right">Gazipur, Dhaka, Bangladesh</div>
-                    </li>
-                    <li>
-                        <div class="left"><img src="image/icons/arrow_right.png" alt="arrow"> <b>Education :</b></div> 
-                        <div class="right">Higher Secondary Certificate</div>
-                    </li>
-                    <li>
-                        <div class="left"><img src="image/icons/arrow_right.png" alt="arrow"> <b>Language :</b></div> 
-                        <div class="right">English, Bengali, Hindi</div>
-                    </li>
-                    <li>
-                        <div class="left"><img src="image/icons/arrow_right.png" alt="arrow"> <b>Phone :</b></div>
-                        <div class="right"><a href="tel:+8801961900733" title="Feel free to call me">+88 01961 900733</a></div>
-                    </li>
-                    <li>
-                        <div class="left"><img src="image/icons/arrow_right.png" alt="arrow"> <b>Email :</b></div>
-                        <div class="right"><a href="mailto:freelancershahin00@gmail.com" title="Write something on email">freelancershahin00@gmail.com</a></div>
-                    </li>
-                    <li>
-                        <div class="left"><img src="image/icons/arrow_right.png" alt="arrow"> <b>Freelance :</b></div>
-                        <div class="right">Available</div>
-                    </li>
-                </ul>
-                <!-- resume download button -->
+                    <!-- resume download button -->
                 <div id="resumeDownload">
                     <a href="files/Shahin's Resume.pdf" download="Shahin's Resume" title="Click to download my Resume" onclick="resumeDownload()">DOWNLOAD RESUME</a>
                     <span class="tooltip">Downloaded</span>
-                        <script>
-                            function resumeDownload(){
-                                let tooltip = document.querySelector("#about_me .details #resumeDownload span.tooltip");
-                                tooltip.classList.add("active");
-                                setTimeout(function() {tooltip.classList.remove("active")}, 2000);
-                            }
-                        </script>
+                    <script>
+                        function resumeDownload(){
+                            let tooltip = document.querySelector("#about_me .desc #resumeDownload span.tooltip");
+                            tooltip.classList.add("active");
+                            setTimeout(function() {tooltip.classList.remove("active")}, 2000);
+                        }
+                    </script>
                 </div>
             </div>
         </div>
@@ -391,14 +363,17 @@
             <div class="col_4 info scrollElements js-scroll fade-in-top">
                 <div class="icon"><img src="image/icons/location.png" alt="Location"></div>
                 <h4>Gazipur, Dhaka, Bangladesh</h4>
+                <a href="https://www.google.com/maps/search/gazipur+chowrasta/@23.9895049,90.3812954,17z/data=!3m1!4b1?entry=ttu" target="_blank">FIND ON MAP</a>
             </div>
             <div class="col_4 info scrollElements js-scroll fade-in-top">
                 <div class="icon"><img src="image/icons/phone.png" alt="Phone"></div>
-                <h4><a href="tel:+8801961900733"  title="Feel free to call me">+88 01961 900733</a></h4>
+                <h4>+88 01961 900733</h4>
+                <a href="tel:+8801961900733" target="_blank">CALL NOW</a>
             </div>
             <div class="col_4 info scrollElements js-scroll fade-in-top">
                 <div class="icon"><img src="image/icons/envelope.png" alt="Email"></div>
-                <h4><a href="mailto:freelancershahin00@gmail.com" title="Write something on email">freelancershahin00@gmail.com</a></h4>
+                <h4>freelancershahin00@gmail.com</h4>
+                <a href="mailto:freelancershahin00@gmail.com" target="_blank">GET A QUOTE</a>
             </div>
         </div>
     </div><!-- container -->
@@ -407,15 +382,15 @@
                 <!-- footer section start from here -->
 <footer>
     <div class="container">
-        <div class="logo"><img src="image/logo.svg" alt="Logo" width="100%"></div>
+        <div class="logo"><img src="image/logo-white.svg" alt="Logo" width="100%"></div>
         <div class="row wrapper">
             <div class="col_6 right">
                 <ul>
-                    <li><a href="https://facebook.com/shahin.alam.j" target="_blank" title="Facebook"><img src="image/icons/facebook.png" alt="Facebook"></a></li>
+                    <li><a href="https://www.facebook.com/j.shahinalam" target="_blank" title="Facebook"><img src="image/icons/facebook.png" alt="Facebook"></a></li>
                     <li><a href="https://join.skype.com/invite/wEGRwcjDVLXy" target="_blank" title="Skype"><img src="image/icons/skype.png" alt="Skype"></a></li>
                     <li><a href="https://twitter.com/shahin_js_" target="_blank" title="Twitter"><img src="image/icons/twitter.png" alt="Twitter"></a></li>
-                    <li><a href="https://linkedin.com/in/freelancer-shahin" target="_blank" title="Linkedin"><img src="image/icons/linkedin.png" alt="Linkedin"></a></li>
-                    <li><a href="https://www.youtube.com/channel/UCKJ0A_C4a_yq2RWz3kH9KCw" target="_blank" title="YouTube"><img src="image/icons/youtube.png" alt="YouTube"></a></li>
+                    <li><a href="https://linkedin.com/in/js-shahinalam" target="_blank" title="Linkedin"><img src="image/icons/linkedin.png" alt="Linkedin"></a></li>
+                    <li><a href="https://www.youtube.com/@js.shahin?sub_confirmation=1" target="_blank" title="YouTube"><img src="image/icons/youtube.png" alt="YouTube"></a></li>
                 </ul>
             </div>
             <div class="col_6 left"><img src="image/icons/copyright.png" alt="copyright"> 2023 | <span> Shahin Alam</span></div>
